@@ -30,8 +30,8 @@ This is emacs like plugin for Visual Studio Code.
 ### Search Command
 |Command | Status | Desc |
 |--------|--------|------|
-| C-s | - | - |
-| C-r | - | - |
+| C-s | △ | Search next (command palette) |
+| C-r | △ | Search previous (command palette) |
 | C-l | - | - |
 | M-x (regex) | - | - |
 | M-% (string) | - | - |
@@ -61,12 +61,16 @@ This is emacs like plugin for Visual Studio Code.
 | M-; | OK | Toggle region comment in and out |
 | C-m-\ (C-:) | - | Auto indent |
 
-### Command
+### Other Command
 |Command | Status | Desc |
 |--------|--------|------|
+| C-x h | - | Select all |
 | C-g | △ | Cancel |
 | C-space | OK | Set mark |
 | C-\ | - | IME control |
+| Esc-x shell | - | Start up to the shell |
+| M-/(dabbrev)| - | - |
+| M-num command | - | - |
 
 ### File Command
 |Command | Status | Desc |
@@ -79,10 +83,3 @@ This is emacs like plugin for Visual Studio Code.
 | C-x C-n | - | Open new window |
 | C-x C-b | - | Create new file and open |
 
-
-### Other
-|Command | Status | Desc |
-|--------|--------|------|
-| Esc-x shell | - | Start up to the shell |
-| M-/(dabbrev)| - | - |
-| M-num command | - | - |

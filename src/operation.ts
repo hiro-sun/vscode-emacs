@@ -11,14 +11,6 @@ export class Operation {
        
         this.command_list = {
             
-            "u": () => {
-                if (!this.editor.getCx()) {
-                    this.editor.insertCharacter("u");
-                } else {
-                    this.editor.undo();
-                    this.editor.setCx(false);
-                }
-            },
             'C-f': () => {
                 if (!this.editor.getCx()) {
                     this.editor.getMotion().right().move()
@@ -27,7 +19,6 @@ export class Operation {
                     this.editor.getStatusBar().addText(" C-f").clear();
                     this.editor.setCx(false);
                 }
-                
             },
             'C-b': () => this.editor.getMotion().left().move(),
             'C-n': () => this.editor.getMotion().down().move(),
@@ -57,20 +48,17 @@ export class Operation {
             },
             'C-s': () => {
                 if (!this.editor.getCx()) {
-                    // 後方検索
+                    this.editor.searchNext();
                 } else {
-                    // 保存
                     this.editor.saveFile();
                     this.editor.getStatusBar().addText(" C-s").clear();
                     this.editor.setCx(false);
+                    this.editor.setNormalMode();
                 }
-                this.editor.setNormalMode();
             },
             "C-r": () => {
-                // 前方検索
+                this.editor.searchPrevious();
             },
-            
-            // Edit command
             'C-d': () => {
                 this.editor.setNormalMode();
                 this.editor.deleteRight();
@@ -78,7 +66,6 @@ export class Operation {
             'C-h': () => {
                 this.editor.setNormalMode();
                 this.editor.deleteLeft();
-                
             },
             'M-d': () => {
                 this.editor.setNormalMode();
@@ -86,16 +73,12 @@ export class Operation {
                 
             },
             'C-k': () => {
-                // 行カット
                 if (!this.editor.getMotion().getPoint().isLineEnd()) {
                     this.editor.setMarkMode();
                     this.editor.getMotion().lineEnd().move();
                     let range = this.editor.getMarkSelection();
                     return Editor.delete(range).then(() => {
                         this.editor.setNormalMode();
-                        if (this.editor.getMotion().getPoint().lineEnd()) {
-                            //return this.editor.getMotion().left().move();
-                        }
                     });
                 } else {
                     this.editor.setNormalMode();
@@ -111,7 +94,6 @@ export class Operation {
                         this.editor.getStatusBar().setText("Cut Error!").clear();
                     }
                 } else {
-                    // ファイルを別名で保存
                     this.editor.saveFileAs();
                     this.editor.getStatusBar().addText(" C-w").clear();
                     this.editor.setCx(false);
@@ -163,22 +145,40 @@ export class Operation {
             },
             'C-g': () => {
                 this.editor.setNormalMode();
+                this.editor.setCx(false);
                 this.editor.getStatusBar().setText("Quit").clear();
-    
             },
             "C-x": () => {
-                this.editor.setNormalMode();
                 this.editor.toggleCx();
                 if (this.editor.getCx()) {
                     this.editor.getStatusBar().setText("C-x");
                 } else {
                     this.editor.getStatusBar().init();
-                  
                 }
+                this.editor.setNormalMode();
             },
             "M-x": () => {
                 
             },
+            
+            "h": () => {
+                if (!this.editor.getCx()) {
+                    this.editor.insertCharacter("h");
+                } else {
+                    this.editor.selectAll();
+                    this.editor.getStatusBar().addText(" h").clear();
+                    this.editor.setCx(false);
+                }
+            },
+            "u": () => {
+                if (!this.editor.getCx()) {
+                    this.editor.insertCharacter("u");
+                } else {
+                    this.editor.undo();
+                    this.editor.getStatusBar().addText(" u").clear();
+                    this.editor.setCx(false);
+                }
+            }
             
         };
     }

@@ -24,6 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
         //Meta
         "M-x",
         
+        "h",
         "u"
     ];
     

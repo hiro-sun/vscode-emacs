@@ -4,9 +4,6 @@ import {Point} from './point';
 import {EditMode} from './edit_mode';
 
 
-/**
- * カーソルの移動処理を実行
- */
 export class Motion implements vscode.Disposable {
     private column: number = 0;
 
@@ -16,17 +13,14 @@ export class Motion implements vscode.Disposable {
     private mark_point: Point;
     
     constructor (edit_mode: EditMode) {
-        // 現在のカーソル位置を取得し、positionとcolumn位置を保持
         let current_position = vscode.window.activeTextEditor.selection.active;
         this.point = new Point(current_position.line, current_position.character);
         this.column = this.point.character;
         this.edit_mode = edit_mode;
         
-        // テキストエディタのonDidChangeTextEditorSelectionイベント
         this.disposable_list.push(vscode.window.onDidChangeTextEditorSelection(e => {
             let selection = e.selections[0];
             if (selection) {
-                // 現在の位置と、メンバ変数の位置情報が異なる場合は、メンバ変数の位置情報を更新
                 let line = selection.active.line;
                 let character = selection.active.character;
                 if (this.point.line != line || this.point.character != character) {
@@ -38,8 +32,6 @@ export class Motion implements vscode.Disposable {
         }));
     }
     
-    
-    
     updateMode(edit_mode: EditMode): Motion {
         this.edit_mode = edit_mode;
         if (this.edit_mode === EditMode.MARK) {
@@ -50,9 +42,6 @@ export class Motion implements vscode.Disposable {
         return this;
     }
     
-    /**
-     * 実際の移動処理
-     */
     move(line: number = null, character: number = null): Motion {
         if (this.edit_mode === EditMode.MARK)  return this.select(line, character);
         

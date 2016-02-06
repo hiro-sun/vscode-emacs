@@ -12,6 +12,7 @@ export class Editor {
    
     public item: Item;
     private cx: boolean;
+    private mx: boolean;
     
     private document:vscode.TextDocument;
     
@@ -19,26 +20,18 @@ export class Editor {
         this.edit_mode = EditMode.NORMAL;
         this.motion = new Motion(this.edit_mode);
         this.status_bar = new StatusBar();
-        
-        
         this.cx = false;
+        this.mx = false;
         this.item = new Item;
     }
-    
-    /**
-     * ノーマルモードに
-     */
+
     setNormalMode() {
         this.edit_mode = EditMode.NORMAL;
         this.motion.updateMode(this.edit_mode);
         this.clearPosition();
+        vscode.commands.executeCommand("closeReferenceSearchEditor");
     }
-    
-    /**
-     * マークモード
-     * カーソル移動がリージョンの変更操作になる。
-     * カーソル移動以外の操作、C-gをした場合はノーマルモードに戻る
-     */
+
     setMarkMode() {
         this.edit_mode = EditMode.MARK;
         this.motion.updateMode(this.edit_mode);
@@ -59,11 +52,6 @@ export class Editor {
         return (this.edit_mode === EditMode.MARK);
     }
     
-    
-    
-    /**
-     * リージョンを初期化
-     */
     clearPosition() {
         this.getMotion().quit();
     }
@@ -120,10 +108,9 @@ export class Editor {
     }
     
     getMarkSelection(): vscode.Range {
-        // マーク選択
-        let start = this.getMotion().getMarkPoint(); // マーク開始位置
+        let start = this.getMotion().getMarkPoint(); 
         if (start != null) {
-            let end = this.getMotion().getPoint(); // 現在位置
+            let end = this.getMotion().getPoint();
             return (start.character != end.character || start.line != end.line) ? new vscode.Range(start, end) : null;
         }
         return null;
@@ -243,9 +230,20 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.blockComment");
     }
     
+    selectAll(): void {
+        vscode.commands.executeCommand("editor.action.selectAll");
+    }
+    
+    searchNext(): void {
+        vscode.commands.executeCommand("editor.action.nextMatchFindAction");
+    }
+    
+    searchPrevious(): void {
+        vscode.commands.executeCommand("editor.action.previousMatchFindAction");
+    }
+    
     static delete(range: vscode.Range = null) : Thenable<boolean> {
         if (range === null) {
-            // delete entire document
             let start = new vscode.Position(0, 0);
             let lastLine = vscode.window.activeTextEditor.document.lineCount - 1;
             let end = vscode.window.activeTextEditor.document.lineAt(lastLine).range.end;

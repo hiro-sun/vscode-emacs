@@ -27,13 +27,12 @@
       { "key": "alt+b", "command": "emacs.M-b", "when": "editorTextFocus" },
       { "key": "ctrl+v", "command": "emacs.C-v", "when": "editorTextFocus" },
       { "key": "alt+v", "command": "emacs.M-v", "when": "editorTextFocus" },
-      
       { "key": "alt+shift+.", "command": "emacs.M->", "when": "editorTextFocus" },
       { "key": "alt+shift+,", "command": "emacs.M-<", "when": "editorTextFocus" },
       { "key": "alt+g g", "command": "emacs.M-g_g", "when": "editorTextFocus" },
       
-      { "key": "ctrl+s", "command": "emacs.C-s", "when": "editorTextFocus" },
-      { "key": "ctrl+r", "command": "emacs.C-r", "when": "editorTextFocus" },
+      { "key": "ctrl+s", "command": "emacs.C-s" },
+      { "key": "ctrl+r", "command": "emacs.C-r" },
       
       { "key": "ctrl+l", "command": "emacs.C-l", "when": "editorTextFocus" },
       
@@ -50,20 +49,17 @@
       { "key": "ctrl+;", "command": "emacs.C-semicolon", "when": "editorTextFocus" },
       { "key": "alt+;", "command": "emacs.M-semicolon", "when": "editorTextFocus" },
       
+      { "key": "ctrl+g", "command": "closeFindWidget", "when": "editorFocus && findWidgetVisible" },
+      { "key": "ctrl+g", "command": "closeReferenceSearchEditor", "when": "searchViewletVisible"},
       { "key": "ctrl+g", "command": "emacs.C-g", "when": "editorTextFocus" },
+      
       { "key": "alt+x", "command": "emacs.M-x", "when": "editorTextFocus" },
       
       { "key": "ctrl+x", "command": "emacs.C-x", "when": "editorTextFocus" },
       { "key": "alt+x", "command": "emacs.M-x", "when": "editorTextFocus" },
       
+      { "key": "h", "command": "emacs.h", "when": "editorTextFocus" },
       { "key": "u", "command": "emacs.u", "when": "editorTextFocus" }
-      
-     
-      
-      
-      
-      
-      
     ]
   },
   "scripts": {
