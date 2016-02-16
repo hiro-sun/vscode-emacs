@@ -13,10 +13,15 @@ export class Motion implements vscode.Disposable {
     private mark_point: Point;
     
     constructor (edit_mode: EditMode) {
-        let current_position = vscode.window.activeTextEditor.selection.active;
-        this.point = new Point(current_position.line, current_position.character);
-        this.column = this.point.character;
+        
         this.edit_mode = edit_mode;
+        this.disposable_list.push(vscode.window.onDidChangeActiveTextEditor(e => {
+            if (vscode.window.activeTextEditor.selection) {
+                let current_position = vscode.window.activeTextEditor.selection.active;
+                this.point = new Point(current_position.line, current_position.character);
+                this.column = this.point.character;
+            }
+        }));
         
         this.disposable_list.push(vscode.window.onDidChangeTextEditorSelection(e => {
             let selection = e.selections[0];
