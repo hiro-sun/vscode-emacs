@@ -166,6 +166,11 @@
       },
       {
         "key": "ctrl+g",
+        "command": "emacs.C-g",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+g",
         "command": "closeFindWidget",
         "when": "editorFocus && findWidgetVisible"
       },
@@ -173,11 +178,6 @@
         "key": "ctrl+g",
         "command": "closeReferenceSearchEditor",
         "when": "searchViewletVisible"
-      },
-      {
-        "key": "ctrl+g",
-        "command": "emacs.C-g",
-        "when": "editorTextFocus"
       },
       {
         "key": "alt+x",
