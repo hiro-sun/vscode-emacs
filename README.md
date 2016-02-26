@@ -2,6 +2,15 @@
 
 This is emacs like plugin for Visual Studio Code.
 
+## Update History
+
+0.0.4
+- Modify the search operation.
+- 
+
+0.0.3
+- Fixed a bug that occurred when you start from the command line.
+
 ## Operation
 
 ### Move command

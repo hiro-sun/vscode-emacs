@@ -11,7 +11,7 @@ export class Editor {
     private status_bar: StatusBar;
    
     public item: Item;
-    private cx: boolean;
+    private cx: boolean;    
     private mx: boolean;
     
     private document:vscode.TextDocument;
@@ -151,8 +151,13 @@ export class Editor {
     yank(): void {
         let text = this.item.text;
         vscode.window.activeTextEditor.edit((edit_builder) => {
-            edit_builder.insert(vscode.window.activeTextEditor.selection.active, text);
+            edit_builder.insert(this.getSelection().active, text);
         });
+
+    }
+    
+    private getSelection(): vscode.Selection {
+        return vscode.window.activeTextEditor.selection;
     }
     
     saveFile(): void {
@@ -235,7 +240,12 @@ export class Editor {
     }
     
     searchNext(): void {
-        vscode.commands.executeCommand("editor.action.nextMatchFindAction");
+        let selection = this.getSelection();
+        if ((selection.start.character != selection.end.character) || (selection.start.line != selection.end.line)) {
+            vscode.commands.executeCommand("editor.action.nextMatchFindAction");
+        } else {
+            vscode.commands.executeCommand("actions.find");
+        }
     }
     
     searchPrevious(): void {
