@@ -14,11 +14,12 @@ export class Operation {
             'C-f': () => {
                 if (!this.editor.getCx()) {
                     this.editor.getMotion().right().move()
-                } else {
-                    this.editor.openFile();
-                    this.editor.getStatusBar().addText(" C-f").clear();
-                    this.editor.setCx(false);
                 }
+            },
+            'C-x_C-f': () => {
+                this.editor.openFile();
+                this.editor.getStatusBar().addText(" C-f").clear();
+                this.editor.setCx(false);
             },
             'C-b': () => this.editor.getMotion().left().move(),
             'C-n': () => this.editor.getMotion().down().move(),
@@ -49,12 +50,14 @@ export class Operation {
             'C-s': () => {
                 if (!this.editor.getCx()) {
                     this.editor.searchNext();
-                } else {
-                    this.editor.saveFile();
-                    this.editor.getStatusBar().addText(" C-s").clear();
-                    this.editor.setCx(false);
-                    this.editor.setNormalMode();
                 }
+            },
+            'C-x_C-s': () => {
+                this.editor.saveFile();
+                this.editor.getStatusBar().addText(" C-s").clear();
+                this.editor.setCx(false);
+                this.editor.setNormalMode();
+                
             },
             "C-r": () => {
                 this.editor.searchPrevious();
@@ -99,6 +102,11 @@ export class Operation {
                     this.editor.setCx(false);
                 }
                 
+            },
+            'C-x_C-w': () => {
+                this.editor.saveFileAs();
+                this.editor.getStatusBar().addText(" C-w").clear();
+                this.editor.setCx(false);
             },
             'M-w': () => {
                 this.editor.copy();
@@ -160,26 +168,16 @@ export class Operation {
             "M-x": () => {
                 
             },
-            
-            "h": () => {
-                if (!this.editor.getCx()) {
-                    this.editor.insertCharacter("h");
-                } else {
-                    this.editor.selectAll();
-                    this.editor.getStatusBar().addText(" h").clear();
-                    this.editor.setCx(false);
-                }
+            "C-x_h": () => {
+                this.editor.selectAll();
+                this.editor.getStatusBar().addText("C-x h").clear();
+                this.editor.setCx(false);
             },
-            "u": () => {
-                if (!this.editor.getCx()) {
-                    this.editor.insertCharacter("u");
-                } else {
-                    this.editor.undo();
-                    this.editor.getStatusBar().addText(" u").clear();
-                    this.editor.setCx(false);
-                }
+            "C-x_u": () => {
+                this.editor.undo();
+                this.editor.getStatusBar().addText(" u").clear();
+                this.editor.setCx(false);
             }
-            
         };
     }
     

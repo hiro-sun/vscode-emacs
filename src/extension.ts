@@ -17,15 +17,13 @@ export function activate(context: vscode.ExtensionContext) {
         "C-d","C-h","M-d","C-k","C-w","M-w","C-y",
         "C-j","C-m","C-o",
         "C-semicolon","M-semicolon",
+        "C-x_h","C-x_u","C-x_C-s","C-x_C-w","C-x_C-f",
         
         //File
         "C-x",
         
         //Meta
-        "M-x",
-        
-        "h",
-        "u"
+        "M-x"
     ];
     
     command_list.forEach((command_name) => {

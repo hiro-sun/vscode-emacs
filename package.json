@@ -1,221 +1,236 @@
 {
-  "name": "vscode-emacs",
-  "displayName": "vscode-emacs",
-  "description": "emacs like extension for vscode",
-  "version": "0.0.4",
-  "publisher": "hiro-sun",
-  "homepage": "https://github.com/hiro-sun/vscode-emacs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hiro-sun/vscode-emacs.git"
-  },
-  "engines": {
-    "vscode": "^0.10.1"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "keybindings": [
-      {
-        "key": "ctrl+space",
-        "command": "emacs.C-space",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+f",
-        "command": "emacs.C-f",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+b",
-        "command": "emacs.C-b",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+n",
-        "command": "emacs.C-n",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+p",
-        "command": "emacs.C-p",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+a",
-        "command": "emacs.C-a",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+e",
-        "command": "emacs.C-e",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+f",
-        "command": "emacs.M-f",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+b",
-        "command": "emacs.M-b",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+v",
-        "command": "emacs.C-v",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+v",
-        "command": "emacs.M-v",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+shift+.",
-        "command": "emacs.M->",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+shift+,",
-        "command": "emacs.M-<",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+g g",
-        "command": "emacs.M-g_g",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+s",
-        "command": "emacs.C-s"
-      },
-      {
-        "key": "ctrl+r",
-        "command": "emacs.C-r"
-      },
-      {
-        "key": "ctrl+l",
-        "command": "emacs.C-l",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+d",
-        "command": "emacs.C-d",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+h",
-        "command": "emacs.C-h",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+d",
-        "command": "emacs.M-d",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+k",
-        "command": "emacs.C-k",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+w",
-        "command": "emacs.C-w",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+w",
-        "command": "emacs.M-w",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+y",
-        "command": "emacs.C-y",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+j",
-        "command": "emacs.C-j",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+m",
-        "command": "emacs.C-m",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+o",
-        "command": "emacs.C-o",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+;",
-        "command": "emacs.C-semicolon",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+;",
-        "command": "emacs.M-semicolon",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+g",
-        "command": "emacs.C-g",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+g",
-        "command": "closeFindWidget",
-        "when": "editorFocus && findWidgetVisible"
-      },
-      {
-        "key": "ctrl+g",
-        "command": "closeReferenceSearchEditor",
-        "when": "searchViewletVisible"
-      },
-      {
-        "key": "alt+x",
-        "command": "emacs.M-x",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+x",
-        "command": "emacs.C-x",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+x",
-        "command": "emacs.M-x",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "h",
-        "command": "emacs.h",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "u",
-        "command": "emacs.u",
-        "when": "editorTextFocus"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
-  },
-  "devDependencies": {
-    "tsd": "^0.6.5",
-    "typescript": "^1.6.2",
-    "vscode": "0.10.x"
-  },
-  "dependencies": {
-    "lodash": "^4.1.0"
-  }
+    "name": "vscode-emacs",
+    "displayName": "vscode-emacs",
+    "description": "emacs like extension for vscode",
+    "version": "0.0.5",
+    "publisher": "hiro-sun",
+    "homepage": "https://github.com/hiro-sun/vscode-emacs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hiro-sun/vscode-emacs.git"
+    },
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "key": "ctrl+space",
+                "command": "emacs.C-space",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+f",
+                "command": "emacs.C-f",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+b",
+                "command": "emacs.C-b",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "emacs.C-n",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "emacs.C-p",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+a",
+                "command": "emacs.C-a",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+e",
+                "command": "emacs.C-e",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+f",
+                "command": "emacs.M-f",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+b",
+                "command": "emacs.M-b",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+v",
+                "command": "emacs.C-v",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+v",
+                "command": "emacs.M-v",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+shift+.",
+                "command": "emacs.M->",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+shift+,",
+                "command": "emacs.M-<",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+g g",
+                "command": "emacs.M-g_g",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "emacs.C-s"
+            },
+            {
+                "key": "ctrl+r",
+                "command": "emacs.C-r"
+            },
+            {
+                "key": "ctrl+l",
+                "command": "emacs.C-l",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+d",
+                "command": "emacs.C-d",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+h",
+                "command": "emacs.C-h",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+d",
+                "command": "emacs.M-d",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+k",
+                "command": "emacs.C-k",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+w",
+                "command": "emacs.C-w",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+w",
+                "command": "emacs.M-w",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+y",
+                "command": "emacs.C-y",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+j",
+                "command": "emacs.C-j",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+m",
+                "command": "emacs.C-m",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+o",
+                "command": "emacs.C-o",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+;",
+                "command": "emacs.C-semicolon",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+;",
+                "command": "emacs.M-semicolon",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+g",
+                "command": "emacs.C-g",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+g",
+                "command": "closeFindWidget",
+                "when": "editorFocus && findWidgetVisible"
+            },
+            {
+                "key": "ctrl+g",
+                "command": "closeReferenceSearchEditor",
+                "when": "searchViewletVisible"
+            },
+            {
+                "key": "alt+x",
+                "command": "emacs.M-x",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x",
+                "command": "emacs.C-x",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+x",
+                "command": "emacs.M-x",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x h",
+                "command": "emacs.C-x_h",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x u",
+                "command": "emacs.C-x_u",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x ctrl+w",
+                "command": "emacs.C-x_C-w",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x ctrl+s",
+                "command": "emacs.C-x_C-s",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x ctrl+f",
+                "command": "emacs.C-x_C-f",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    },
+    "devDependencies": {
+        "tsd": "^0.6.5",
+        "typescript": "^1.6.2",
+        "vscode": "0.10.x"
+    },
+    "dependencies": {
+        "lodash": "^4.1.0"
+    }
 }

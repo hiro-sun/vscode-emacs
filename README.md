@@ -4,9 +4,12 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
+0.0.5
+- Change the processing of C-u, C-h.
+- Change the processing of C-x C-f, C-x C-w, C-x C-s.
+
 0.0.4
 - Modify the search operation.
-- 
 
 0.0.3
 - Fixed a bug that occurred when you start from the command line.
@@ -59,7 +62,7 @@ This is emacs like plugin for Visual Studio Code.
 | C-m | OK | Return (Enter) |
 | C-o | OK | Insert blank to next line (open-line) |
 | C-x C-o | - | - |
-| C-x h | - | - |
+| C-x h | OK | Select All |
 | C-x u | OK | Undo |
 | C-x z | - | Redo |
 | M-x tabify | - | - |
@@ -73,7 +76,6 @@ This is emacs like plugin for Visual Studio Code.
 ### Other Command
 |Command | Status | Desc |
 |--------|--------|------|
-| C-x h | - | Select all |
 | C-g | △ | Cancel |
 | C-space | OK | Set mark |
 | C-\ | - | IME control |
