@@ -224,11 +224,6 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+g ctrl+/",
-                "command": "emacs.C-g_C-/",
-                "when": "editorTextFocus"
-            },
-            {
                 "key": "ctrl+p",
                 "command": "showPrevParameterHint",
                 "when": "editorTextFocus && parameterHintsVisible"
