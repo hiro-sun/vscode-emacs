@@ -24,8 +24,8 @@ export class Operation {
             'C-b': () => this.editor.getMotion().left().move(),
             'C-n': () => this.editor.getMotion().down().move(),
             'C-p': () => this.editor.getMotion().up().move(),
-            'C-a': () => this.editor.gotoBeginningOfLine(),
-            'C-e': () => this.editor.gotoEndOfLine(),
+            'C-a': () => this.editor.getMotion().lineBegin().move(),
+            'C-e': () => this.editor.getMotion().lineEnd().move(),
             'M-f': () => this.editor.getMotion().rightWord().move(),
             'M-b': () => this.editor.getMotion().leftWord().move(),
             'C-v': () => {
