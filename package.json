@@ -218,6 +218,16 @@
                 "key": "ctrl+x ctrl+f",
                 "command": "emacs.C-x_C-f",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+/",
+                "command": "emacs.C-/",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+g ctrl+/",
+                "command": "emacs.C-g_C-/",
+                "when": "editorTextFocus"
             }
         ]
     },

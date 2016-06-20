@@ -177,6 +177,16 @@ export class Operation {
                 this.editor.undo();
                 this.editor.getStatusBar().addText(" u").clear();
                 this.editor.setCx(false);
+            },
+            "C-/": () => {
+                this.editor.undo();
+                this.editor.getStatusBar().setText("Undo").clear();
+                this.editor.setCx(false);
+            },
+            "C-g_C-/": () => {
+                this.editor.redo();
+                this.editor.getStatusBar().setText("Redo").clear();
+                this.editor.setCx(false);
             }
         };
     }

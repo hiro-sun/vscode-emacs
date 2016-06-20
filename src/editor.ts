@@ -208,6 +208,10 @@ export class Editor {
         vscode.commands.executeCommand("undo");
     }
     
+    redo(): void {
+        vscode.commands.executeCommand("redo");
+    }
+
     cursorUndo(): void {
         vscode.commands.executeCommand("cursorUndo");
     }
