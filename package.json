@@ -216,8 +216,7 @@
             },
             {
                 "key": "ctrl+x ctrl+f",
-                "command": "emacs.C-x_C-f",
-                "when": "editorTextFocus"
+                "command": "emacs.C-x_C-f"
             },
             {
                 "key": "ctrl+/",
