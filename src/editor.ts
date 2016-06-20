@@ -176,6 +176,14 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.insertLineAfter");
     }
     
+    gotoBeginningOfLine(): void {
+        vscode.commands.executeCommand("cursorHome");
+    }
+
+    gotoEndOfLine(): void {
+        vscode.commands.executeCommand("cursorEnd");
+    }
+
     gotoLine(): void {
         vscode.commands.executeCommand("workbench.action.gotoLine");
     }
