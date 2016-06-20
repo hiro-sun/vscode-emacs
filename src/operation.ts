@@ -178,6 +178,11 @@ export class Operation {
                 this.editor.getStatusBar().addText(" u").clear();
                 this.editor.setCx(false);
             },
+            "C-x_z": () => {
+                this.editor.redo();
+                this.editor.getStatusBar().addText(" z").clear();
+                this.editor.setCx(false);
+            },
             "C-/": () => {
                 this.editor.undo();
                 this.editor.getStatusBar().setText("Undo").clear();

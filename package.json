@@ -205,6 +205,11 @@
                 "when": "editorTextFocus"
             },
             {
+                "key": "ctrl+x z",
+                "command": "emacs.C-x_z",
+                "when": "editorTextFocus"
+            },
+            {
                 "key": "ctrl+x ctrl+w",
                 "command": "emacs.C-x_C-w",
                 "when": "editorTextFocus"
