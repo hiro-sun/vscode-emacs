@@ -265,6 +265,14 @@
             {   "key": "ctrl+n",
                 "command": "workbench.action.quickOpenNavigateNext",
                 "when": "inQuickOpen"
+            },
+            {   "key": "ctrl+'",
+                "command": "emacs.C-'",
+                "when": "editorTextFocus"
+            },
+            {   "key": "ctrl+shift+'",
+                "command": "emacs.C-Sh-'",
+                "when": "editorTextFocus"
             }
         ]
     },
