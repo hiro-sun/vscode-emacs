@@ -107,7 +107,6 @@ export class Point extends vscode.Position {
         return new Point(max_line, max_character);
     }
  
-    
     isFirstLine(): boolean {
         return this.line === 0;
     }
@@ -149,7 +148,6 @@ export class Point extends vscode.Position {
         return false;
     }
     
-  
     getLineLength(line_number: number = null): number {
         line_number = (line_number === null) ? vscode.window.activeTextEditor.selection.active.line : line_number;
         
@@ -159,5 +157,4 @@ export class Point extends vscode.Position {
         }
         return 0;
     }
-    
 }

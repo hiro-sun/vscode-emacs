@@ -54,7 +54,9 @@ export class Motion implements vscode.Disposable {
     }
     
     move(line: number = null, character: number = null): Motion {
-        if (this.edit_mode === EditMode.MARK)  return this.select(line, character);
+        if (this.edit_mode === EditMode.MARK) {
+            return this.select(line, character);
+        }
         
         if (line != null && character != null) {
             this.point = new Point(line, character);
@@ -128,11 +130,13 @@ export class Motion implements vscode.Disposable {
     
     lineBegin(): Motion {
         this.point = this.point.lineBegin();
+        this.column = this.point.character;
         return this;
     }
     
     lineEnd(): Motion {
         this.point = this.point.lineEnd();
+        this.column = this.point.character;
         return this;
     }
     
