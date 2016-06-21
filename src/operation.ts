@@ -5,12 +5,11 @@ import {Point} from './point';
 export class Operation {
     private editor: Editor;
     private command_list: { [key: string]: (...args: any[]) => any, thisArgs?: any } = {};
-    
+
     constructor() {
         this.editor = new Editor();
-       
+
         this.command_list = {
-            
             'C-f': () => {
                 if (!this.editor.getCx()) {
                     this.editor.getMotion().right().move()
@@ -57,7 +56,7 @@ export class Operation {
                 this.editor.getStatusBar().addText(" C-s").clear();
                 this.editor.setCx(false);
                 this.editor.setNormalMode();
-                
+
             },
             "C-r": () => {
                 this.editor.searchPrevious();
@@ -73,7 +72,7 @@ export class Operation {
             'M-d': () => {
                 this.editor.setNormalMode();
                 this.editor.deleteWordRight();
-                
+
             },
             'C-k': () => {
                 if (!this.editor.getMotion().getPoint().isLineEnd()) {
@@ -87,7 +86,7 @@ export class Operation {
                     this.editor.setNormalMode();
                     this.editor.getStatusBar().init();
                 }
-                
+
             },
             'C-w': () => {
                 if (!this.editor.getCx()) {
@@ -101,7 +100,7 @@ export class Operation {
                     this.editor.getStatusBar().addText(" C-w").clear();
                     this.editor.setCx(false);
                 }
-                
+
             },
             'C-x_C-w': () => {
                 this.editor.saveFileAs();
@@ -112,13 +111,13 @@ export class Operation {
                 this.editor.copy();
                 this.editor.setNormalMode();
                 this.editor.getStatusBar().setText("Copy").clear();
-                
+
             },
             'C-y': () => {
                 this.editor.setNormalMode();
                 this.editor.yank();
                 this.editor.getStatusBar().setText("Yank").clear();
-                
+
             },
             'C-j': () => {
                 this.editor.setNormalMode();
@@ -133,16 +132,14 @@ export class Operation {
                 this.editor.insertBlankNextLine();
             },
             "C-semicolon": () => {
-                
                 this.editor.toggleLineComment();
                 this.editor.setNormalMode();
             },
             "M-semicolon": () => {
-                
                 this.editor.toggleRegionComment();
                 this.editor.setNormalMode();
             },
-            
+
             'C-space': () => {
                 this.editor.changeMode();
                 if (this.editor.isNormalMode()) {
@@ -165,9 +162,8 @@ export class Operation {
                 }
                 this.editor.setNormalMode();
             },
-            "M-x": () => {
-                
-            },
+            "C-l": () => {},
+            "M-x": () => {},
             "C-x_h": () => {
                 this.editor.selectAll();
                 this.editor.getStatusBar().addText("C-x h").clear();
@@ -177,11 +173,31 @@ export class Operation {
                 this.editor.undo();
                 this.editor.getStatusBar().addText(" u").clear();
                 this.editor.setCx(false);
+            },
+            "C-x_z": () => {
+                this.editor.redo();
+                this.editor.getStatusBar().addText(" z").clear();
+                this.editor.setCx(false);
+            },
+            "C-/": () => {
+                this.editor.undo();
+                this.editor.getStatusBar().setText("Undo").clear();
+                this.editor.setCx(false);
+            },
+            "C-'": () => {
+                this.editor.toggleSuggest();
+                this.editor.getStatusBar().setText("Triggered Suggest").clear();
+                this.editor.setCx(false);
+            },
+            "C-Sh-'": () => {
+                this.editor.toggleParameterHint();
+                this.editor.getStatusBar().setText("Triggered Parameter Hints").clear();
+                this.editor.setCx(false);
             }
         };
     }
-    
-    getCommand(command_name: string):  (...args: any[]) => any {   
+
+    getCommand(command_name: string): (...args: any[]) => any {
         return this.command_list[command_name];
     }
 }

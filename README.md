@@ -4,6 +4,13 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
+0.0.6
+- C-p and C-n can be used in other panels such as Suggestion and Hint.
+- Fix bug C-x C-f won't open file explorer.
+- Add one more undo operation C-/
+- Add redo operation C-x z
+- Fix incorrect column moving after using C-a and C-e
+
 0.0.5
 - Change the processing of C-u, C-h.
 - Change the processing of C-x C-f, C-x C-w, C-x C-s.
@@ -64,7 +71,7 @@ This is emacs like plugin for Visual Studio Code.
 | C-x C-o | - | - |
 | C-x h | OK | Select All |
 | C-x u | OK | Undo |
-| C-x z | - | Redo |
+| C-x z | OK | Redo |
 | M-x tabify | - | - |
 | M-x untabify | - | - |
 | M-x comment-region | - | Comment out |

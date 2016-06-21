@@ -205,6 +205,11 @@
                 "when": "editorTextFocus"
             },
             {
+                "key": "ctrl+x z",
+                "command": "emacs.C-x_z",
+                "when": "editorTextFocus"
+            },
+            {
                 "key": "ctrl+x ctrl+w",
                 "command": "emacs.C-x_C-w",
                 "when": "editorTextFocus"
@@ -216,7 +221,57 @@
             },
             {
                 "key": "ctrl+x ctrl+f",
-                "command": "emacs.C-x_C-f",
+                "command": "emacs.C-x_C-f"
+            },
+            {
+                "key": "ctrl+/",
+                "command": "emacs.C-/",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "showPrevParameterHint",
+                "when": "editorTextFocus && parameterHintsVisible"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "showNextParameterHint",
+                "when": "editorTextFocus && parameterHintsVisible"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "selectPrevQuickFix",
+                "when": "editorFocus && quickFixWidgetVisible"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "selectNextQuickFix",
+                "when": "editorFocus && quickFixWidgetVisible"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "selectPrevSuggestion",
+                "when": "editorTextFocus && suggestWidgetVisible"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "selectNextSuggestion",
+                "when": "editorTextFocus && suggestWidgetVisible"
+            },
+            {   "key": "ctrl+p",
+                "command": "workbench.action.quickOpenNavigatePrevious",
+                "when": "inQuickOpen"
+            },
+            {   "key": "ctrl+n",
+                "command": "workbench.action.quickOpenNavigateNext",
+                "when": "inQuickOpen"
+            },
+            {   "key": "ctrl+'",
+                "command": "emacs.C-'",
+                "when": "editorTextFocus"
+            },
+            {   "key": "ctrl+shift+'",
+                "command": "emacs.C-Sh-'",
                 "when": "editorTextFocus"
             }
         ]

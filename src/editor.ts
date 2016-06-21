@@ -189,7 +189,7 @@ export class Editor {
     }
     
     openFile(): void {
-        vscode.commands.executeCommand("workbench.action.files.openFile");
+        vscode.commands.executeCommand("workbench.action.files.openFileFolder");
     }
     
     deleteRight(): void {
@@ -208,6 +208,10 @@ export class Editor {
         vscode.commands.executeCommand("undo");
     }
     
+    redo(): void {
+        vscode.commands.executeCommand("redo");
+    }
+
     cursorUndo(): void {
         vscode.commands.executeCommand("cursorUndo");
     }
@@ -252,6 +256,14 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.previousMatchFindAction");
     }
     
+    toggleSuggest(): void {
+        vscode.commands.executeCommand("editor.action.triggerSuggest");
+    }
+
+    toggleParameterHint(): void {
+        vscode.commands.executeCommand("editor.action.triggerParameterHints");
+    }
+
     static delete(range: vscode.Range = null) : Thenable<boolean> {
         if (range === null) {
             let start = new vscode.Position(0, 0);
