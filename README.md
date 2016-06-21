@@ -11,6 +11,8 @@ This is emacs like plugin for Visual Studio Code.
 - Add redo operation C-x z
 - Fix incorrect column moving after using C-a and C-e
 
+These commands and bug fixes were coding by kpping. Thanks. :)
+
 0.0.5
 - Change the processing of C-u, C-h.
 - Change the processing of C-x C-f, C-x C-w, C-x C-s.
