@@ -78,10 +78,8 @@ export class Operation {
                 if (!this.editor.getMotion().getPoint().isLineEnd()) {
                     this.editor.setMarkMode();
                     this.editor.getMotion().lineEnd().move();
-                    let range = this.editor.getMarkSelection();
-                    return Editor.delete(range).then(() => {
-                        this.editor.setNormalMode();
-                    });
+                    this.editor.cut();
+                    this.editor.yank();
                 } else {
                     this.editor.setNormalMode();
                     this.editor.getStatusBar().init();
