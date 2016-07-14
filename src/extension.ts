@@ -2,30 +2,34 @@ import * as vscode from 'vscode';
 import {Operation} from './operation';
 
 export function activate(context: vscode.ExtensionContext) {
-    
+
     let op = new Operation();
     let command_list: string[] = [
         "C-g",
         "C-space",
-        
+
         // Move
-        "C-f","C-b","C-n","C-p","C-a","C-e","M-f","M-b",
-        "C-v","M-v","M->","M-<","M-g_g",
-        "C-s","C-r","C-l",
-        
+        "C-f", "C-b", "C-n", "C-p", "C-a", "C-e", "M-f", "M-b",
+        "C-v", "M-v", "M->", "M-<", "M-g_g",
+        "C-s", "C-r", "C-l",
+
         // Edit
-        "C-d","C-h","M-d","C-k","C-w","M-w","C-y",
-        "C-j","C-m","C-o",
-        "C-semicolon","M-semicolon",
-        "C-x_h","C-x_u","C-x_C-s","C-x_C-w","C-x_C-f",
-        
+        "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
+        "C-j", "C-m", "C-o",
+        "C-semicolon", "M-semicolon",
+        "C-x_h", "C-x_u", "C-x_C-s", "C-x_C-w",
+        "C-/", "C-x_z",
+
+        // IntelliSense
+        "C-'", "C-Sh-'",
+
         //File
         "C-x",
-        
+
         //Meta
         "M-x"
     ];
-    
+
     command_list.forEach((command_name) => {
         context.subscriptions.push(registerCommand(command_name, op));
     });
