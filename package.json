@@ -2,7 +2,7 @@
     "name": "vscode-emacs",
     "displayName": "vscode-emacs",
     "description": "emacs like extension for vscode",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "hiro-sun",
     "homepage": "https://github.com/hiro-sun/vscode-emacs",
     "repository": {
@@ -151,8 +151,7 @@
             },
             {
                 "key": "ctrl+o",
-                "command": "emacs.C-o",
-                "when": "editorTextFocus"
+                "command": "workbench.action.files.openFile"
             },
             {
                 "key": "ctrl+;",
@@ -221,7 +220,7 @@
             },
             {
                 "key": "ctrl+x ctrl+f",
-                "command": "emacs.C-x_C-f"
+                "command": "workbench.action.files.openFile"
             },
             {
                 "key": "ctrl+/",

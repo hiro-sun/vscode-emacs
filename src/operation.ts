@@ -15,14 +15,9 @@ export class Operation {
                     this.editor.getMotion().right().move()
                 }
             },
-            'C-x_C-f': () => {
-                this.editor.openFile();
-                this.editor.getStatusBar().addText(" C-f").clear();
-                this.editor.setCx(false);
-            },
             'C-b': () => this.editor.getMotion().left().move(),
             'C-n': () => this.editor.getMotion().down().move(),
-            'C-p': () => this.editor.getMotion().up().move(),
+            'C-p': () => this.editor.getMotion().up().move(),        
             'C-a': () => this.editor.getMotion().lineBegin().move(),
             'C-e': () => this.editor.getMotion().lineEnd().move(),
             'M-f': () => this.editor.getMotion().rightWord().move(),
@@ -81,10 +76,12 @@ export class Operation {
                     this.editor.cut();
                     this.editor.yank();
                 } else {
+                    if (this.editor.getMotion().getPoint().isLineBegin()) {
+                        this.editor.deleteLeft();
+                    }
                     this.editor.setNormalMode();
                     this.editor.getStatusBar().init();
                 }
-
             },
             'C-w': () => {
                 if (!this.editor.getCx()) {

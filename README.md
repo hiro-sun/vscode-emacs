@@ -4,6 +4,10 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
+0.0.7 (2016-07-14)
+- bug fix for C-k. Thanks trezm.
+- C-o and C-x C-f execute "workbench.action.files.openFile". Thanks sammy44nts.
+
 0.0.6
 - C-p and C-n can be used in other panels such as Suggestion and Hint.
 - Fix bug C-x C-f won't open file explorer.

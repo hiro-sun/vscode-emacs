@@ -189,7 +189,9 @@ export class Editor {
     }
     
     openFile(): void {
-        vscode.commands.executeCommand("workbench.action.files.openFileFolder");
+        console.log("openfilefolder");
+        //vscode.commands.executeCommand("workbench.action.files.openFileFolder");
+        vscode.commands.executeCommand("vscode.openFileFolder");
     }
     
     deleteRight(): void {
