@@ -17,7 +17,7 @@ export class Operation {
             },
             'C-b': () => this.editor.getMotion().left().move(),
             'C-n': () => this.editor.getMotion().down().move(),
-            'C-p': () => this.editor.getMotion().up().move(),        
+            'C-p': () => this.editor.getMotion().up().move(),
             'C-a': () => this.editor.getMotion().lineBegin().move(),
             'C-e': () => this.editor.getMotion().lineEnd().move(),
             'M-f': () => this.editor.getMotion().rightWord().move(),
@@ -121,10 +121,6 @@ export class Operation {
             'C-m': () => {
                 this.editor.setNormalMode();
                 this.editor.lineBreak();
-            },
-            'C-o': () => {
-                this.editor.setNormalMode();
-                this.editor.insertBlankNextLine();
             },
             "C-semicolon": () => {
                 this.editor.toggleLineComment();

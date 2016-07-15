@@ -150,10 +150,6 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+o",
-                "command": "workbench.action.files.openFile"
-            },
-            {
                 "key": "ctrl+;",
                 "command": "emacs.C-semicolon",
                 "when": "editorTextFocus"
@@ -220,7 +216,7 @@
             },
             {
                 "key": "ctrl+x ctrl+f",
-                "command": "workbench.action.files.openFile"
+                "command": "workbench.action.files.openFolder"
             },
             {
                 "key": "ctrl+/",

@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Edit
         "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
-        "C-j", "C-m", "C-o",
+        "C-j", "C-m",
         "C-semicolon", "M-semicolon",
         "C-x_h", "C-x_u", "C-x_C-s", "C-x_C-w",
         "C-/", "C-x_z",
