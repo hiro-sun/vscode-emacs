@@ -188,12 +188,6 @@ export class Editor {
         vscode.commands.executeCommand("scrollPageUp");
     }
 
-    openFile(): void {
-        console.log("openfilefolder");
-        //vscode.commands.executeCommand("workbench.action.files.openFileFolder");
-        vscode.commands.executeCommand("vscode.openFileFolder");
-    }
-
     deleteRight(): void {
         vscode.commands.executeCommand("deleteRight");
     }
