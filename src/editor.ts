@@ -134,7 +134,7 @@ export class Editor {
         }
         return false;
     }
-    
+
     copy(): void {
         let range:vscode.Range;
         range = this.getMouseSelection();
@@ -219,7 +219,6 @@ export class Editor {
     }
 
     insertCharacter(character: string): void {
-
         vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(vscode.window.activeTextEditor.selection.active, character);
         });
