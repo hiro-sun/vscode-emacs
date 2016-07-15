@@ -187,17 +187,7 @@ export class Editor {
     pageUp(): void {
         vscode.commands.executeCommand("scrollPageUp");
     }
-<<<<<<< HEAD
-    
-    openFile(): void {
-        console.log("openfilefolder");
-        //vscode.commands.executeCommand("workbench.action.files.openFileFolder");
-        vscode.commands.executeCommand("vscode.openFileFolder");
-    }
-    
-=======
 
->>>>>>> develop
     deleteRight(): void {
         vscode.commands.executeCommand("deleteRight");
     }
@@ -213,11 +203,7 @@ export class Editor {
     undo(): void {
         vscode.commands.executeCommand("undo");
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> develop
     redo(): void {
         vscode.commands.executeCommand("redo");
     }
@@ -264,11 +250,7 @@ export class Editor {
     searchPrevious(): void {
         vscode.commands.executeCommand("editor.action.previousMatchFindAction");
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> develop
     toggleSuggest(): void {
         vscode.commands.executeCommand("editor.action.triggerSuggest");
     }
