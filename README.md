@@ -73,7 +73,6 @@ These commands and bug fixes were coding by kpping. Thanks. :)
 | C-y | OK | Past region |
 | C-j | OK | Return (Enter) |
 | C-m | OK | Return (Enter) |
-| C-o | OK | Insert blank to next line (open-line) |
 | C-x C-o | - | - |
 | C-x h | OK | Select All |
 | C-x u | OK | Undo |
@@ -99,11 +98,11 @@ These commands and bug fixes were coding by kpping. Thanks. :)
 ### File Command
 |Command | Status | Desc |
 |--------|--------|------|
-| C-x C-f | OK | Open |
+| C-o | OK | Open a file |
+| C-x C-f | OK | Open a working directory |
 | C-x C-s | OK | Save |
 | C-x C-w | OK | Save as |
 | C-x i | - | Insert buffer from file |
 | C-x C-d | - | Open Folder |
 | C-x C-n | - | Open new window |
 | C-x C-b | - | Create new file and open |
-

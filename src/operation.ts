@@ -122,10 +122,6 @@ export class Operation {
                 this.editor.setNormalMode();
                 this.editor.lineBreak();
             },
-            'C-o': () => {
-                this.editor.setNormalMode();
-                this.editor.insertBlankNextLine();
-            },
             "C-semicolon": () => {
                 this.editor.toggleLineComment();
                 this.editor.setNormalMode();
