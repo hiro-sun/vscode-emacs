@@ -4,6 +4,19 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
+0.0.7 (2016-07-14)
+- bug fix for C-k. Thanks trezm.
+- C-o and C-x C-f execute "workbench.action.files.openFile". Thanks sammy44nts.
+
+0.0.6
+- C-p and C-n can be used in other panels such as Suggestion and Hint.
+- Fix bug C-x C-f won't open file explorer.
+- Add one more undo operation C-/
+- Add redo operation C-x z
+- Fix incorrect column moving after using C-a and C-e
+
+These commands and bug fixes were coding by kpping. Thanks. :)
+
 0.0.5
 - Change the processing of C-u, C-h.
 - Change the processing of C-x C-f, C-x C-w, C-x C-s.
@@ -60,11 +73,10 @@ This is emacs like plugin for Visual Studio Code.
 | C-y | OK | Past region |
 | C-j | OK | Return (Enter) |
 | C-m | OK | Return (Enter) |
-| C-o | OK | Insert blank to next line (open-line) |
 | C-x C-o | - | - |
 | C-x h | OK | Select All |
 | C-x u | OK | Undo |
-| C-x z | - | Redo |
+| C-x z | OK | Redo |
 | M-x tabify | - | - |
 | M-x untabify | - | - |
 | M-x comment-region | - | Comment out |
@@ -86,11 +98,11 @@ This is emacs like plugin for Visual Studio Code.
 ### File Command
 |Command | Status | Desc |
 |--------|--------|------|
-| C-x C-f | OK | Open |
+| C-o | OK | Open a file |
+| C-x C-f | OK | Open a working directory |
 | C-x C-s | OK | Save |
 | C-x C-w | OK | Save as |
 | C-x i | - | Insert buffer from file |
 | C-x C-d | - | Open Folder |
 | C-x C-n | - | Open new window |
 | C-x C-b | - | Create new file and open |
-
