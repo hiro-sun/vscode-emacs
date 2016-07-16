@@ -56,8 +56,8 @@ Use `Shift+Insert` to paste from clipboard.
 ### Search Command
 |Command | Status | Desc |
 |--------|--------|------|
-| `C-s` | △ | Search forward |
-| `C-r` | △ | Search backward |
+| `C-s` | OK | Search forward |
+| `C-r` | OK | Search backward |
 | `C-l` | - | - |
 | `M-x (regex)` | - | - |
 | `M-% (string)` | - | - |

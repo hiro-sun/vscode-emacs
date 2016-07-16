@@ -41,20 +41,12 @@ export class Operation {
             "M-g_g": () => {
                 this.editor.gotoLine();
             },
-            'C-s': () => {
-                if (!this.editor.getCx()) {
-                    this.editor.searchNext();
-                }
-            },
             'C-x_C-s': () => {
                 this.editor.saveFile();
                 this.editor.getStatusBar().addText(" C-s").clear();
                 this.editor.setCx(false);
                 this.editor.setNormalMode();
 
-            },
-            "C-r": () => {
-                this.editor.searchPrevious();
             },
             'C-d': () => {
                 this.editor.setNormalMode();

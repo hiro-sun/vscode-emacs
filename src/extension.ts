@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import {Operation} from './operation';
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext): void {
 
     let op = new Operation();
     let command_list: string[] = [
@@ -10,8 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Move
         "C-f", "C-b", "C-n", "C-p", "C-a", "C-e", "M-f", "M-b",
-        "C-v", "M-v", "M->", "M-<", "M-g_g",
-        "C-s", "C-r", "C-l",
+        "C-v", "M-v", "M->", "M-<", "M-g_g", "C-l",
 
         // Edit
         "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
@@ -35,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 }
 
-export function deactivate() {
+export function deactivate(): void {
 }
 
 function registerCommand(command_name: string, op: Operation): vscode.Disposable {

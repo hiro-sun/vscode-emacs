@@ -94,11 +94,23 @@
             },
             {
                 "key": "ctrl+s",
-                "command": "emacs.C-s"
+                "command": "actions.find",
+                "when": "!findWidgetVisible"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "editor.action.nextMatchFindAction",
+                "when": "findWidgetVisible"
             },
             {
                 "key": "ctrl+r",
-                "command": "emacs.C-r"
+                "command": "actions.find",
+                "when": "!findWidgetVisible"
+            },
+            {
+                "key": "ctrl+r",
+                "command": "editor.action.previousMatchFindAction",
+                "when": "findWidgetVisible"
             },
             {
                 "key": "ctrl+l",

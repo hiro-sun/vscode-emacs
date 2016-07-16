@@ -238,19 +238,6 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.selectAll");
     }
 
-    searchNext(): void {
-        let selection = this.getSelection();
-        if ((selection.start.character != selection.end.character) || (selection.start.line != selection.end.line)) {
-            vscode.commands.executeCommand("editor.action.nextMatchFindAction");
-        } else {
-            vscode.commands.executeCommand("actions.find");
-        }
-    }
-
-    searchPrevious(): void {
-        vscode.commands.executeCommand("editor.action.previousMatchFindAction");
-    }
-
     toggleSuggest(): void {
         vscode.commands.executeCommand("editor.action.triggerSuggest");
     }
