@@ -9,6 +9,7 @@
         "type": "git",
         "url": "https://github.com/hiro-sun/vscode-emacs.git"
     },
+    "bugs": "https://github.com/hiro-sun/vscode-emacs/issues",
     "engines": {
         "vscode": "^0.10.1"
     },
