@@ -34,11 +34,3 @@ export function deactivate(): void {
 function registerCommand(command_name: string, op: Operation): vscode.Disposable {
     return vscode.commands.registerCommand("emacs." + command_name, op.getCommand(command_name));
 }
-
-export function showInfo(text: string): Thenable<{}> {
-    return vscode.window.showInformationMessage("Emacs: " + text);
-}
-
-export function showError(text: string): Thenable<{}> {
-    return vscode.window.showErrorMessage("Emacs: " + text);
-}

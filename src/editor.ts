@@ -2,13 +2,11 @@ import * as vscode from 'vscode';
 import {Motion} from './motion';
 import {Item} from './item';
 import {EditMode} from './edit_mode';
-import {StatusBar} from './status_bar';
 import {Point} from './point';
 
 export class Editor {
     private edit_mode: EditMode;
     private motion: Motion;
-    private status_bar: StatusBar;
 
     public item: Item;
     private cx: boolean;
@@ -19,10 +17,13 @@ export class Editor {
     constructor() {
         this.edit_mode = EditMode.NORMAL;
         this.motion = new Motion(this.edit_mode);
-        this.status_bar = new StatusBar();
         this.cx = false;
         this.mx = false;
         this.item = new Item;
+    }
+
+    setStatusBarMessage(text: string): vscode.Disposable {
+        return vscode.window.setStatusBarMessage(text, 1000);
     }
 
     setNormalMode() {
@@ -59,10 +60,6 @@ export class Editor {
 
     getMotion(): Motion {
         return this.motion;
-    }
-
-    getStatusBar(): StatusBar {
-        return this.status_bar;
     }
 
     getMouseSelection(): vscode.Range {

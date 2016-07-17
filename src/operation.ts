@@ -61,26 +61,25 @@ export class Operation {
                         this.editor.deleteLeft();
                     }
                     this.editor.setNormalMode();
-                    this.editor.getStatusBar().init();
                 }
             },
             'C-w': () => {
                 if (this.editor.cut()) {
-                    this.editor.getStatusBar().setText("Cut").clear();
+                    this.editor.setStatusBarMessage("Cut");
                 } else {
-                    this.editor.getStatusBar().setText("Cut Error!").clear();
+                    this.editor.setStatusBarMessage("Cut Error!");
                 }
             },
             'M-w': () => {
                 this.editor.copy();
                 this.editor.setNormalMode();
-                this.editor.getStatusBar().setText("Copy").clear();
+                this.editor.setStatusBarMessage("Copy");
 
             },
             'C-y': () => {
                 this.editor.setNormalMode();
                 this.editor.yank();
-                this.editor.getStatusBar().setText("Yank").clear();
+                this.editor.setStatusBarMessage("Yank");
 
             },
             'C-j': () => {
@@ -93,19 +92,19 @@ export class Operation {
             },
             "C-x_h": () => {
                 this.editor.selectAll();
-                this.editor.getStatusBar().addText("C-x h").clear();
+                this.editor.setStatusBarMessage("C-x h");
             },
             "C-x_u": () => {
                 this.editor.undo();
-                this.editor.getStatusBar().addText("Undo!").clear();
+                this.editor.setStatusBarMessage("Undo!");
             },
             "C-/": () => {
                 this.editor.undo();
-                this.editor.getStatusBar().setText("Undo!").clear();
+                this.editor.setStatusBarMessage("Undo!");
             },
             "C-x_z": () => {
                 this.editor.redo();
-                this.editor.getStatusBar().addText("C-x z").clear();
+                this.editor.setStatusBarMessage("C-x z");
             },
             "C-semicolon": () => {
                 this.editor.toggleLineComment();
@@ -117,23 +116,23 @@ export class Operation {
             },
             'C-g': () => {
                 this.editor.setNormalMode();
-                this.editor.getStatusBar().setText("Quit").clear();
+                this.editor.setStatusBarMessage("Quit");
             },
             'C-space': () => {
                 this.editor.changeMode();
                 if (this.editor.isNormalMode()) {
-                    this.editor.getStatusBar().setText("Mark deactivated").clear();
+                    this.editor.setStatusBarMessage("Mark deactivated");
                 } else if (this.editor.isMarkMode()) {
-                    this.editor.getStatusBar().setText("Mark Set");
+                    this.editor.setStatusBarMessage("Mark Set");
                 }
             },
             "C-quote": () => {
                 this.editor.toggleSuggest();
-                this.editor.getStatusBar().setText("Triggered Suggest").clear();
+                this.editor.setStatusBarMessage("Triggered Suggest");
             },
             "C-doublequote": () => {
                 this.editor.toggleParameterHint();
-                this.editor.getStatusBar().setText("Triggered Parameter Hints").clear();
+                this.editor.setStatusBarMessage("Triggered Parameter Hints");
             }
         };
     }
