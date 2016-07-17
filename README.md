@@ -92,8 +92,8 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-g` | OK | Cancel |
 | `C-space` | OK | Set mark |
 | `C-\` | - | IME control |
-| `C-quote` | - | IntelliSense Suggestion |
-| `C-doublequote` | - | IntelliSense Parameter Hint |
+| `C-quote` | OK | IntelliSense Suggestion |
+| `C-doublequote` | △ | IntelliSense Parameter Hint |
 | `M-x shell` | - | Start up to the shell |
 | `M-/(dabbrev)` | - | - |
 | `M-num command` | - | - |

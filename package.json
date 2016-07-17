@@ -299,11 +299,11 @@
                 "when": "inQuickOpen"
             },
             {   "key": "ctrl+'",
-                "command": "emacs.C-quote",
+                "command": "editor.action.triggerSuggest",
                 "when": "editorTextFocus"
             },
             {   "key": "ctrl+shift+'",
-                "command": "emacs.C-doublequote",
+                "command": "editor.action.triggerParameterHints",
                 "when": "editorTextFocus"
             }
         ]

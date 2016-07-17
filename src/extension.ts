@@ -13,9 +13,6 @@ export function activate(context: vscode.ExtensionContext): void {
             "C-x_h",
             "C-x_u", "C-/", "C-x_z",
             "C-semicolon", "M-semicolon",
-    
-            // IntelliSense
-            "C-quote", "C-doublequote"
         ],
         cursorMoves: string[] = [
             "cursorUp", "cursorDown", "cursorLeft", "cursorRight",

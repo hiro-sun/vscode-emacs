@@ -199,14 +199,6 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.selectAll");
     }
 
-    toggleSuggest(): void {
-        vscode.commands.executeCommand("editor.action.triggerSuggest");
-    }
-
-    toggleParameterHint(): void {
-        vscode.commands.executeCommand("editor.action.triggerParameterHints");
-    }
-
     static delete(range: vscode.Range = null) : Thenable<boolean> {
         if (range === null) {
             let start = new vscode.Position(0, 0);

@@ -89,14 +89,6 @@ export class Operation {
             'C-g': () => {
                 this.editor.setNormalMode();
                 this.editor.setStatusBarMessage("Quit");
-            },
-            "C-quote": () => {
-                this.editor.toggleSuggest();
-                this.editor.setStatusBarMessage("Triggered Suggest");
-            },
-            "C-doublequote": () => {
-                this.editor.toggleParameterHint();
-                this.editor.setStatusBarMessage("Triggered Parameter Hints");
             }
         };
     }
