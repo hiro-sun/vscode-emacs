@@ -54,7 +54,7 @@ export class Operation {
         };
     }
 
-    getCommand(command_name: string): (...args: any[]) => any {
-        return this.commandList[command_name];
+    getCommand(commandName: string): (...args: any[]) => any {
+        return this.commandList[commandName];
     }
 }

@@ -61,8 +61,8 @@ function initMarkMode(context: vscode.ExtensionContext): void {
     );
 }
 
-function registerCommand(command_name: string, op: Operation): vscode.Disposable {
-    return vscode.commands.registerCommand("emacs." + command_name, op.getCommand(command_name));
+function registerCommand(commandName: string, op: Operation): vscode.Disposable {
+    return vscode.commands.registerCommand("emacs." + commandName, op.getCommand(commandName));
 }
 
 function initSelection(): void {
