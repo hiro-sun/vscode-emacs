@@ -28,6 +28,7 @@ These commands and bug fixes were coding by kpping. Thanks. :)
 - Fixed a bug that occurred when you start from the command line.
 
 ## Operation
+Use `Shift+DEL` to cut to clipboard, the `Ctrl+C` is not overridden.
 Use `Shift+Insert` to paste from clipboard.
 
 ### Move command
@@ -112,7 +113,7 @@ Use `Shift+Insert` to paste from clipboard.
 
 ## Conflicts with default key bindings
 - `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
-- `ctrl+x`: editor.action.clipboardCutAction;
+- `ctrl+x`: editor.action.clipboardCutAction => **Use `shift+DEL` instead**;
 - `ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**;
 - `ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide;
 - `ctrl+y`: redo;
