@@ -42,16 +42,15 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-e` | OK | Move to the end of line |
 | `M-f` | OK | Move to the forward by one word unit |
 | `M-b` | OK | Move to the backward by one word unit |
-| `C-v` | OK | Scroll down by one screen unit |
-| `M-v` | OK | Scroll up by one screen unit |
 | `M->` | OK | Move to the end of buffer |
 | `M-<` | OK | Move to the beginning of buffer |
-| `M-r` | - | - |
+| `C-v` | OK | Scroll down by one screen unit |
+| `M-v` | OK | Scroll up by one screen unit |
 | `M-x goto-line` | - | Jump to line |
 | `M-x goto-char` | - | - |
 | `C-x C-n` | - | - |
 | `C-u C-x C-n` | - |deactivate C-x C-n |
-| `M-g g` | △ | Jump to line (command palette) |
+| `M-g g` | OK | Jump to line (command palette) |
 
 
 ### Search Command
@@ -90,8 +89,8 @@ Use `Shift+Insert` to paste from clipboard.
 ### Other Command
 |Command | Status | Desc |
 |--------|--------|------|
-| `C-g` | △ | Cancel |
-| `C-space` | △ | Set mark |
+| `C-g` | OK | Cancel |
+| `C-space` | OK | Set mark |
 | `C-\` | - | IME control |
 | `C-quote` | - | IntelliSense Suggestion |
 | `C-doublequote` | - | IntelliSense Parameter Hint |
@@ -112,6 +111,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-b` | - | Create new file and open |
 
 ## Conflicts with default key bindings
+- `ctrl+g`: workbench.action.gotoLine => **Use `alt+g g` instead**;
 - `ctrl+b`: workbench.action.toggleSidebarVisibility;
 - `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
 - `ctrl+x`: editor.action.clipboardCutAction => **Use `shift+DEL` instead**;

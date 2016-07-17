@@ -149,18 +149,6 @@ export class Editor {
         vscode.commands.executeCommand("editor.action.insertLineAfter");
     }
 
-    gotoLine(): void {
-        vscode.commands.executeCommand("workbench.action.gotoLine");
-    }
-
-    pageDown(): void {
-        vscode.commands.executeCommand("scrollPageDown");
-    }
-
-    pageUp(): void {
-        vscode.commands.executeCommand("scrollPageUp");
-    }
-
     deleteRight(): void {
         vscode.commands.executeCommand("deleteRight");
     }

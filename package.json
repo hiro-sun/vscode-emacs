@@ -23,69 +23,108 @@
     "contributes": {
         "keybindings": [
             {
+                "key": "right",
+                "command": "emacs.cursorRight",
+                "when": "editorTextFocus"
+            },
+            {
                 "key": "ctrl+f",
-                "command": "emacs.C-f",
+                "command": "emacs.cursorRight",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "left",
+                "command": "emacs.cursorLeft",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+b",
-                "command": "emacs.C-b",
+                "command": "emacs.cursorLeft",
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+n",
-                "command": "emacs.C-n",
-                "when": "editorTextFocus"
+                "key": "up",
+                "command": "emacs.cursorUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "ctrl+p",
-                "command": "emacs.C-p",
+                "command": "emacs.cursorUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "down",
+                "command": "emacs.cursorDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "emacs.cursorDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "home",
+                "command": "emacs.cursorHome",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+a",
-                "command": "emacs.C-a",
+                "command": "emacs.cursorHome",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "end",
+                "command": "emacs.cursorEnd",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+e",
-                "command": "emacs.C-e",
+                "command": "emacs.cursorEnd",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+f",
-                "command": "emacs.M-f",
+                "command": "emacs.cursorWordRight",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+b",
-                "command": "emacs.M-b",
+                "command": "emacs.cursorWordLeft",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "pagedown",
+                "command": "emacs.cursorPageDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "ctrl+v",
-                "command": "emacs.C-v",
+                "command": "scrollPageDown",
                 "when": "editorTextFocus"
             },
             {
+                "key": "pageup",
+                "command": "emacs.cursorPageUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
                 "key": "alt+v",
-                "command": "emacs.M-v",
+                "command": "scrollPageUp",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+shift+.",
-                "command": "emacs.M->",
+                "command": "emacs.cursorBottom",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+shift+,",
-                "command": "emacs.M-<",
+                "command": "emacs.cursorTop",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+g g",
-                "command": "emacs.M-g_g",
-                "when": "editorTextFocus"
+                "command": "workbench.action.gotoLine"
             },
             {
                 "key": "ctrl+s",

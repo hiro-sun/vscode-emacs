@@ -96,17 +96,6 @@ export class Point extends vscode.Position {
         return this.lineEnd();
     }
 
-    documentBegin(): Point {
-        return new Point(0, 0);
-    }
-
-    documentEnd(): Point {
-        let line_count = vscode.window.activeTextEditor.document.lineCount;
-        let max_line = line_count > 0 ? line_count - 1 : 0;
-        let max_character = this.getLineLength(max_line);
-        return new Point(max_line, max_character);
-    }
-
     isFirstLine(): boolean {
         return this.line === 0;
     }

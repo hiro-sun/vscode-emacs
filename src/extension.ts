@@ -3,27 +3,42 @@ import {Operation} from './operation';
 
 var inMarkMode: boolean = false;
 export function activate(context: vscode.ExtensionContext): void {
-    let op = new Operation();
-    let command_list: string[] = [
-        "C-g",
+    let op = new Operation(),
+        commandList: string[] = [
+            "C-g",
 
-        // Move
-        "C-f", "C-b", "C-n", "C-p", "C-a", "C-e", "M-f", "M-b",
-        "C-v", "M-v", "M->", "M-<", "M-g_g",
+            // Edit
+            "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
+            "C-j", "C-m",
+            "C-x_h",
+            "C-x_u", "C-/", "C-x_z",
+            "C-semicolon", "M-semicolon",
+    
+            // IntelliSense
+            "C-quote", "C-doublequote"
+        ],
+        cursorMoves: string[] = [
+            "cursorUp", "cursorDown", "cursorLeft", "cursorRight",
+            "cursorHome", "cursorEnd",
+            "cursorWordLeft", "cursorWordRight",
+            "cursorPageDown", "cursorPageUp",
+            "cursorTop", "cursorBottom"
+        ];
 
-        // Edit
-        "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
-        "C-j", "C-m",
-        "C-x_h",
-        "C-x_u", "C-/", "C-x_z",
-        "C-semicolon", "M-semicolon",
- 
-        // IntelliSense
-        "C-quote", "C-doublequote"
-    ];
+    commandList.forEach(commandName => {
+        context.subscriptions.push(registerCommand(commandName, op));
+    });
 
-    command_list.forEach((command_name) => {
-        context.subscriptions.push(registerCommand(command_name, op));
+    cursorMoves.forEach(element => {
+        context.subscriptions.push(vscode.commands.registerCommand(
+            "emacs."+element, () => {
+                vscode.commands.executeCommand(
+                    inMarkMode ?
+                    element+"Select" :
+                    element
+                );
+            })
+        )
     });
 
     initMarkMode(context);

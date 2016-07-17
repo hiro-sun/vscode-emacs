@@ -137,18 +137,6 @@ export class Motion implements vscode.Disposable {
         return this;
     }
 
-    documentBegin(): Motion {
-        this.point = this.point.documentBegin();
-        this.column = this.point.character;
-        return this;
-    }
-
-    documentEnd(): Motion {
-        this.point = this.point.documentEnd();
-        this.column = this.point.character;
-        return this;
-    }
-
     getPoint(): Point {
         return this.point;
     }

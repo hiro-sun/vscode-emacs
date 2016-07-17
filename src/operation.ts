@@ -4,39 +4,11 @@ import {Point} from './point';
 
 export class Operation {
     private editor: Editor;
-    private command_list: { [key: string]: (...args: any[]) => any, thisArgs?: any } = {};
+    private commandList: { [key: string]: (...args: any[]) => any, thisArgs?: any } = {};
 
     constructor() {
         this.editor = new Editor();
-
-        this.command_list = {
-            'C-f': () => this.editor.getMotion().right().move(),
-            'C-b': () => this.editor.getMotion().left().move(),
-            'C-n': () => this.editor.getMotion().down().move(),
-            'C-p': () => this.editor.getMotion().up().move(),        
-            'C-a': () => this.editor.getMotion().lineBegin().move(),
-            'C-e': () => this.editor.getMotion().lineEnd().move(),
-            'M-f': () => this.editor.getMotion().rightWord().move(),
-            'M-b': () => this.editor.getMotion().leftWord().move(),
-            'C-v': () => {
-                this.editor.setNormalMode();
-                this.editor.pageDown();
-            },
-            'M-v': () => {
-                this.editor.setNormalMode();
-                this.editor.pageUp();
-            },
-            'M->': () => {
-                this.editor.setNormalMode();
-                this.editor.getMotion().documentEnd().move();
-            },
-            'M-<': () => {
-                this.editor.setNormalMode();
-                this.editor.getMotion().documentBegin().move();
-            },
-            "M-g_g": () => {
-                this.editor.gotoLine();
-            },
+        this.commandList = {
             'C-d': () => {
                 this.editor.setNormalMode();
                 this.editor.deleteRight();
@@ -130,6 +102,6 @@ export class Operation {
     }
 
     getCommand(command_name: string): (...args: any[]) => any {
-        return this.command_list[command_name];
+        return this.commandList[command_name];
     }
 }
