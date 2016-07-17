@@ -111,11 +111,11 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-b` | - | Create new file and open |
 
 ## Conflicts with default key bindings
-`ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest.
-`ctrl+x`: editor.action.clipboardCutAction.
-`ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**.
-`ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide.
-`ctrl+y`: redo.
-`ctrl+m`: editor.action.toggleTabFocusMode.
-`ctrl+/`: editor.action.commentLine.
-`ctrl+p`: workbench.action.quickOpenNavigateNext.
+- `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
+- `ctrl+x`: editor.action.clipboardCutAction;
+- `ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**;
+- `ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide;
+- `ctrl+y`: redo;
+- `ctrl+m`: editor.action.toggleTabFocusMode;
+- `ctrl+/`: editor.action.commentLine;
+- `ctrl+p`: workbench.action.quickOpenNavigateNext.
