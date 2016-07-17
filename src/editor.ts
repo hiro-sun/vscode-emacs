@@ -65,18 +65,6 @@ export class Editor {
         return this.status_bar;
     }
 
-    toggleCx() {
-        this.cx = (this.cx) ? false : true;
-    }
-
-    getCx(): boolean {
-        return this.cx;
-    }
-
-    setCx(cx: boolean): void {
-        this.cx = cx;
-    }
-
     getMouseSelection(): vscode.Range {
         let selection = vscode.window.activeTextEditor.selection;
         let start = selection.start;
@@ -158,14 +146,6 @@ export class Editor {
 
     private getSelection(): vscode.Selection {
         return vscode.window.activeTextEditor.selection;
-    }
-
-    saveFile(): void {
-        vscode.commands.executeCommand("workbench.action.files.save");
-    }
-
-    saveFileAs(): void {
-        vscode.commands.executeCommand("workbench.action.files.saveAs");
     }
 
     codeFormat(): void {

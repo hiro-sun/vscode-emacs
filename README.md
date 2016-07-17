@@ -76,7 +76,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-m` | OK | Return (Enter) |
 | `C-x C-o` | - | - |
 | `C-x h` | OK | Select All |
-| `C-x u` | OK | Undo |
+| `C-x u` (`C-/`)| OK | Undo |
 | `C-x z` | OK | Redo |
 | `M-x tabify` | - | - |
 | `M-x untabify` | - | - |
@@ -90,8 +90,10 @@ Use `Shift+Insert` to paste from clipboard.
 |Command | Status | Desc |
 |--------|--------|------|
 | `C-g` | △ | Cancel |
-| `C-space` | OK | Set mark |
+| `C-space` | △ | Set mark |
 | `C-\` | - | IME control |
+| `C-quote` | - | IntelliSense Suggestion |
+| `C-doublequote` | - | IntelliSense Parameter Hint |
 | `M-x shell` | - | Start up to the shell |
 | `M-/(dabbrev)` | - | - |
 | `M-num command` | - | - |
@@ -107,3 +109,13 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-d` | - | Open Folder |
 | `C-x C-n` | - | Open new window |
 | `C-x C-b` | - | Create new file and open |
+
+## Conflicts with default key bindings
+`ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest.
+`ctrl+x`: editor.action.clipboardCutAction.
+`ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**.
+`ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide.
+`ctrl+y`: redo.
+`ctrl+m`: editor.action.toggleTabFocusMode.
+`ctrl+/`: editor.action.commentLine.
+`ctrl+p`: workbench.action.quickOpenNavigateNext.

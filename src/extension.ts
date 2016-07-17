@@ -10,23 +10,17 @@ export function activate(context: vscode.ExtensionContext): void {
 
         // Move
         "C-f", "C-b", "C-n", "C-p", "C-a", "C-e", "M-f", "M-b",
-        "C-v", "M-v", "M->", "M-<", "M-g_g", "C-l",
+        "C-v", "M-v", "M->", "M-<", "M-g_g",
 
         // Edit
         "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
         "C-j", "C-m",
+        "C-x_h",
+        "C-x_u", "C-/", "C-x_z",
         "C-semicolon", "M-semicolon",
-        "C-x_h", "C-x_u", "C-x_C-s", "C-x_C-w",
-        "C-/", "C-x_z",
-
+ 
         // IntelliSense
-        "C-'", "C-Sh-'",
-
-        //File
-        "C-x",
-
-        //Meta
-        "M-x"
+        "C-quote", "C-doublequote"
     ];
 
     command_list.forEach((command_name) => {
