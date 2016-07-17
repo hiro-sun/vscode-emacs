@@ -194,7 +194,7 @@
             },
             {
                 "key": "ctrl+g",
-                "command": "cancelSelection",
+                "command": "emacs.exitMarkMode",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
@@ -204,7 +204,7 @@
             },
             {
                 "key": "ctrl+space",
-                "command": "emacs.C-space",
+                "command": "emacs.enterMarkMode",
                 "when": "editorTextFocus"
             },
             {

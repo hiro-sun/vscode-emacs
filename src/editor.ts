@@ -49,10 +49,6 @@ export class Editor {
         return (this.edit_mode === EditMode.NORMAL);
     }
 
-    isMarkMode(): boolean {
-        return (this.edit_mode === EditMode.MARK);
-    }
-
     clearPosition() {
         this.getMotion().quit();
     }

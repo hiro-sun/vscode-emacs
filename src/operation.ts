@@ -118,14 +118,6 @@ export class Operation {
                 this.editor.setNormalMode();
                 this.editor.setStatusBarMessage("Quit");
             },
-            'C-space': () => {
-                this.editor.changeMode();
-                if (this.editor.isNormalMode()) {
-                    this.editor.setStatusBarMessage("Mark deactivated");
-                } else if (this.editor.isMarkMode()) {
-                    this.editor.setStatusBarMessage("Mark Set");
-                }
-            },
             "C-quote": () => {
                 this.editor.toggleSuggest();
                 this.editor.setStatusBarMessage("Triggered Suggest");
