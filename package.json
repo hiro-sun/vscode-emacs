@@ -194,6 +194,11 @@
             },
             {
                 "key": "ctrl+g",
+                "command": "cancelSelection",
+                "when": "editorTextFocus && editorHasSelection"
+            },
+            {
+                "key": "ctrl+g",
                 "command": "closeReferenceSearchEditor",
                 "when": "searchViewletVisible"
             },
