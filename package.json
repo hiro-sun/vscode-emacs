@@ -16,6 +16,9 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "ëmacs", "shortcuts", "keybindings", "behavior", "killring"
+    ],
     "activationEvents": [
         "*"
     ],
@@ -306,8 +309,5 @@
         "tsd": "^0.6.5",
         "typescript": "^1.6.2",
         "vscode": "0.10.x"
-    },
-    "dependencies": {
-        "lodash": "^4.1.0"
     }
 }
