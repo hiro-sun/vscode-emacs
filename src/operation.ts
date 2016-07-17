@@ -1,6 +1,4 @@
 import {Editor} from './editor';
-import {Item} from './item';
-import {Point} from './point';
 
 export class Operation {
     private editor: Editor;
@@ -9,21 +7,8 @@ export class Operation {
     constructor() {
         this.editor = new Editor();
         this.commandList = {
-            'C-d': () => {
-                this.editor.setNormalMode();
-                this.editor.deleteRight();
-            },
-            'C-h': () => {
-                this.editor.setNormalMode();
-                this.editor.deleteLeft();
-            },
-            'M-d': () => {
-                this.editor.setNormalMode();
-                this.editor.deleteWordRight();
-
-            },
             'C-k': () => {
-                if (!this.editor.getMotion().getPoint().isLineEnd()) {
+/*                if (!this.editor.getMotion().getPoint().isLineEnd()) {
                     this.editor.setMarkMode();
                     this.editor.getMotion().lineEnd().move();
                     this.editor.cut();
@@ -34,7 +19,7 @@ export class Operation {
                     }
                     this.editor.setNormalMode();
                 }
-            },
+*/            },
             'C-w': () => {
                 if (this.editor.cut()) {
                     this.editor.setStatusBarMessage("Cut");
@@ -44,27 +29,15 @@ export class Operation {
             },
             'M-w': () => {
                 this.editor.copy();
-                this.editor.setNormalMode();
+                // this.editor.setNormalMode();
                 this.editor.setStatusBarMessage("Copy");
 
             },
             'C-y': () => {
-                this.editor.setNormalMode();
+                // this.editor.setNormalMode();
                 this.editor.yank();
                 this.editor.setStatusBarMessage("Yank");
 
-            },
-            'C-j': () => {
-                this.editor.setNormalMode();
-                this.editor.lineBreak();
-            },
-            'C-m': () => {
-                this.editor.setNormalMode();
-                this.editor.lineBreak();
-            },
-            "C-x_h": () => {
-                this.editor.selectAll();
-                this.editor.setStatusBarMessage("C-x h");
             },
             "C-x_u": () => {
                 this.editor.undo();
@@ -74,20 +47,8 @@ export class Operation {
                 this.editor.undo();
                 this.editor.setStatusBarMessage("Undo!");
             },
-            "C-x_z": () => {
-                this.editor.redo();
-                this.editor.setStatusBarMessage("C-x z");
-            },
-            "C-semicolon": () => {
-                this.editor.toggleLineComment();
-                this.editor.setNormalMode();
-            },
-            "M-semicolon": () => {
-                this.editor.toggleRegionComment();
-                this.editor.setNormalMode();
-            },
             'C-g': () => {
-                this.editor.setNormalMode();
+                // this.editor.setNormalMode();
                 this.editor.setStatusBarMessage("Quit");
             }
         };

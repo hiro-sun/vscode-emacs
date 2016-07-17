@@ -148,17 +148,17 @@
             },
             {
                 "key": "ctrl+d",
-                "command": "emacs.C-d",
+                "command": "deleteRight",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+h",
-                "command": "emacs.C-h",
+                "command": "deleteLeft",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+d",
-                "command": "emacs.M-d",
+                "command": "deleteWordRight",
                 "when": "editorTextFocus"
             },
             {
@@ -183,17 +183,12 @@
             },
             {
                 "key": "ctrl+j",
-                "command": "emacs.C-j",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+m",
-                "command": "emacs.C-m",
+                "command": "editor.action.insertLineAfter",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+x h",
-                "command": "emacs.C-x_h",
+                "command": "editor.action.selectAll",
                 "when": "editorTextFocus"
             },
             {
@@ -207,18 +202,13 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+x z",
-                "command": "emacs.C-x_z",
-                "when": "editorTextFocus"
-            },
-            {
                 "key": "ctrl+;",
-                "command": "emacs.C-semicolon",
+                "command": "editor.action.commentLine",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+;",
-                "command": "emacs.M-semicolon",
+                "command": "editor.action.blockComment",
                 "when": "editorTextFocus"
             },
             {

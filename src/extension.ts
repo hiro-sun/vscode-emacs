@@ -8,11 +8,8 @@ export function activate(context: vscode.ExtensionContext): void {
             "C-g",
 
             // Edit
-            "C-d", "C-h", "M-d", "C-k", "C-w", "M-w", "C-y",
-            "C-j", "C-m",
-            "C-x_h",
-            "C-x_u", "C-/", "C-x_z",
-            "C-semicolon", "M-semicolon",
+            "C-k", "C-w", "M-w", "C-y",
+            "C-x_u", "C-/"
         ],
         cursorMoves: string[] = [
             "cursorUp", "cursorDown", "cursorLeft", "cursorRight",

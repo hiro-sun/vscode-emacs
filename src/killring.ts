@@ -1,3 +1,3 @@
-export class Item {
+export class KillRing {
     public text: string;
 }

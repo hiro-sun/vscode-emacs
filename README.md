@@ -68,23 +68,22 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-d` | OK | Delete right from point (DEL)|
 | `C-h` | OK | Delete left from point (BS) |
 | `M-d` | OK | Delete word at current position |
-| `C-k` | OK | Kill to line end |
-| `C-w` | OK | Kill region |
-| `M-w` | OK | Copy region to kill ring |
-| `C-y` | OK | Yank |
-| `C-j` | OK | Return (Enter) |
-| `C-m` | OK | Return (Enter) |
+| `C-k` | - | Kill to line end |
+| `C-w` | △ | Kill region |
+| `M-w` | △ | Copy region to kill ring |
+| `C-y` | △ | Yank |
+| `C-j` | OK | Line Feed |
+| `C-m` | - | Carriage Return |
+| `C-i` | - | Horizontal Tab |
 | `C-x C-o` | - | - |
 | `C-x h` | OK | Select All |
 | `C-x u` (`C-/`)| OK | Undo |
-| `C-x z` | OK | Redo |
 | `M-x tabify` | - | - |
 | `M-x untabify` | - | - |
 | `M-x comment-region` | - | Comment out |
 | `C-u M-x comment-region` | - | Comment in |
 | `C-;` | OK | Toggle line comment in and out |
-| `M-;` | OK | Toggle region comment in and out |
-| `C-m-\` (`C-:`) | - | Auto indent |
+| `M-;` | △ | Toggle region comment in and out |
 
 ### Other Command
 |Command | Status | Desc |
@@ -119,5 +118,5 @@ Use `Shift+Insert` to paste from clipboard.
 - `ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide;
 - `ctrl+y`: redo;
 - `ctrl+m`: editor.action.toggleTabFocusMode;
-- `ctrl+/`: editor.action.commentLine;
+- `ctrl+/`: editor.action.commentLine => **Use `ctrl+;` instead**;
 - `ctrl+p`: workbench.action.quickOpenNavigateNext.
