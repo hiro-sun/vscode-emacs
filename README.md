@@ -112,6 +112,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-b` | - | Create new file and open |
 
 ## Conflicts with default key bindings
+- `ctrl+b`: workbench.action.toggleSidebarVisibility;
 - `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
 - `ctrl+x`: editor.action.clipboardCutAction => **Use `shift+DEL` instead**;
 - `ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**;
