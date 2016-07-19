@@ -102,8 +102,8 @@
             },
             {
                 "key": "ctrl+v",
-                "command": "scrollPageDown",
-                "when": "editorTextFocus"
+                "command": "emacs.cursorPageDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "pageup",
@@ -112,8 +112,8 @@
             },
             {
                 "key": "alt+v",
-                "command": "scrollPageUp",
-                "when": "editorTextFocus"
+                "command": "emacs.cursorPageUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "alt+shift+.",
