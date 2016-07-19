@@ -9,6 +9,7 @@
         "type": "git",
         "url": "https://github.com/hiro-sun/vscode-emacs.git"
     },
+    "bugs": "https://github.com/hiro-sun/vscode-emacs/issues",
     "engines": {
         "vscode": "^0.10.1"
     },
@@ -21,11 +22,6 @@
     "main": "./out/src/extension",
     "contributes": {
         "keybindings": [
-            {
-                "key": "ctrl+space",
-                "command": "emacs.C-space",
-                "when": "editorTextFocus"
-            },
             {
                 "key": "ctrl+f",
                 "command": "emacs.C-f",
@@ -93,16 +89,23 @@
             },
             {
                 "key": "ctrl+s",
-                "command": "emacs.C-s"
+                "command": "actions.find",
+                "when": "!findWidgetVisible"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "editor.action.nextMatchFindAction",
+                "when": "findWidgetVisible"
             },
             {
                 "key": "ctrl+r",
-                "command": "emacs.C-r"
+                "command": "actions.find",
+                "when": "!findWidgetVisible"
             },
             {
-                "key": "ctrl+l",
-                "command": "emacs.C-l",
-                "when": "editorTextFocus"
+                "key": "ctrl+r",
+                "command": "editor.action.previousMatchFindAction",
+                "when": "findWidgetVisible"
             },
             {
                 "key": "ctrl+d",
@@ -150,6 +153,26 @@
                 "when": "editorTextFocus"
             },
             {
+                "key": "ctrl+x h",
+                "command": "emacs.C-x_h",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x u",
+                "command": "emacs.C-x_u",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+/",
+                "command": "emacs.C-/",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x z",
+                "command": "emacs.C-x_z",
+                "when": "editorTextFocus"
+            },
+            {
                 "key": "ctrl+;",
                 "command": "emacs.C-semicolon",
                 "when": "editorTextFocus"
@@ -171,47 +194,17 @@
             },
             {
                 "key": "ctrl+g",
+                "command": "cancelSelection",
+                "when": "editorTextFocus && editorHasSelection"
+            },
+            {
+                "key": "ctrl+g",
                 "command": "closeReferenceSearchEditor",
                 "when": "searchViewletVisible"
             },
             {
-                "key": "alt+x",
-                "command": "emacs.M-x",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x",
-                "command": "emacs.C-x",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "alt+x",
-                "command": "emacs.M-x",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x h",
-                "command": "emacs.C-x_h",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x u",
-                "command": "emacs.C-x_u",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x z",
-                "command": "emacs.C-x_z",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x ctrl+w",
-                "command": "emacs.C-x_C-w",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+x ctrl+s",
-                "command": "emacs.C-x_C-s",
+                "key": "ctrl+space",
+                "command": "emacs.C-space",
                 "when": "editorTextFocus"
             },
             {
@@ -219,8 +212,13 @@
                 "command": "workbench.action.files.openFolder"
             },
             {
-                "key": "ctrl+/",
-                "command": "emacs.C-/",
+                "key": "ctrl+x ctrl+s",
+                "command": "workbench.action.files.save",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+x ctrl+w",
+                "command": "workbench.action.files.saveAs",
                 "when": "editorTextFocus"
             },
             {
@@ -262,11 +260,11 @@
                 "when": "inQuickOpen"
             },
             {   "key": "ctrl+'",
-                "command": "emacs.C-'",
+                "command": "emacs.C-quote",
                 "when": "editorTextFocus"
             },
             {   "key": "ctrl+shift+'",
-                "command": "emacs.C-Sh-'",
+                "command": "emacs.C-doublequote",
                 "when": "editorTextFocus"
             }
         ]

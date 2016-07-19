@@ -2,13 +2,11 @@ import * as vscode from 'vscode';
 import {Motion} from './motion';
 import {Item} from './item';
 import {EditMode} from './edit_mode';
-import {StatusBar} from './status_bar';
 import {Point} from './point';
 
 export class Editor {
     private edit_mode: EditMode;
     private motion: Motion;
-    private status_bar: StatusBar;
 
     public item: Item;
     private cx: boolean;
@@ -19,10 +17,13 @@ export class Editor {
     constructor() {
         this.edit_mode = EditMode.NORMAL;
         this.motion = new Motion(this.edit_mode);
-        this.status_bar = new StatusBar();
         this.cx = false;
         this.mx = false;
         this.item = new Item;
+    }
+
+    setStatusBarMessage(text: string): vscode.Disposable {
+        return vscode.window.setStatusBarMessage(text, 1000);
     }
 
     setNormalMode() {
@@ -59,22 +60,6 @@ export class Editor {
 
     getMotion(): Motion {
         return this.motion;
-    }
-
-    getStatusBar(): StatusBar {
-        return this.status_bar;
-    }
-
-    toggleCx() {
-        this.cx = (this.cx) ? false : true;
-    }
-
-    getCx(): boolean {
-        return this.cx;
-    }
-
-    setCx(cx: boolean): void {
-        this.cx = cx;
     }
 
     getMouseSelection(): vscode.Range {
@@ -160,14 +145,6 @@ export class Editor {
         return vscode.window.activeTextEditor.selection;
     }
 
-    saveFile(): void {
-        vscode.commands.executeCommand("workbench.action.files.save");
-    }
-
-    saveFileAs(): void {
-        vscode.commands.executeCommand("workbench.action.files.saveAs");
-    }
-
     codeFormat(): void {
         vscode.commands.executeCommand("editor.action.format");
     }
@@ -236,19 +213,6 @@ export class Editor {
 
     selectAll(): void {
         vscode.commands.executeCommand("editor.action.selectAll");
-    }
-
-    searchNext(): void {
-        let selection = this.getSelection();
-        if ((selection.start.character != selection.end.character) || (selection.start.line != selection.end.line)) {
-            vscode.commands.executeCommand("editor.action.nextMatchFindAction");
-        } else {
-            vscode.commands.executeCommand("actions.find");
-        }
-    }
-
-    searchPrevious(): void {
-        vscode.commands.executeCommand("editor.action.previousMatchFindAction");
     }
 
     toggleSuggest(): void {
