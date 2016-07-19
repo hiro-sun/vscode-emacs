@@ -42,16 +42,15 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-e` | OK | Move to the end of line |
 | `M-f` | OK | Move to the forward by one word unit |
 | `M-b` | OK | Move to the backward by one word unit |
-| `C-v` | OK | Scroll down by one screen unit |
-| `M-v` | OK | Scroll up by one screen unit |
 | `M->` | OK | Move to the end of buffer |
 | `M-<` | OK | Move to the beginning of buffer |
-| `M-r` | - | - |
+| `C-v` | OK | Scroll down by one screen unit |
+| `M-v` | OK | Scroll up by one screen unit |
 | `M-x goto-line` | - | Jump to line |
 | `M-x goto-char` | - | - |
 | `C-x C-n` | - | - |
 | `C-u C-x C-n` | - |deactivate C-x C-n |
-| `M-g g` | △ | Jump to line (command palette) |
+| `M-g g` | OK | Jump to line (command palette) |
 
 
 ### Search Command
@@ -69,32 +68,31 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-d` | OK | Delete right from point (DEL)|
 | `C-h` | OK | Delete left from point (BS) |
 | `M-d` | OK | Delete word at current position |
-| `C-k` | OK | Kill to line end |
-| `C-w` | OK | Kill region |
-| `M-w` | OK | Copy region to kill ring |
-| `C-y` | OK | Yank |
-| `C-j` | OK | Return (Enter) |
-| `C-m` | OK | Return (Enter) |
+| `C-k` | - | Kill to line end |
+| `C-w` | △ | Kill region |
+| `M-w` | △ | Copy region to kill ring |
+| `C-y` | △ | Yank |
+| `C-j` | OK | Line Feed |
+| `C-m` | - | Carriage Return |
+| `C-i` | - | Horizontal Tab |
 | `C-x C-o` | - | - |
 | `C-x h` | OK | Select All |
 | `C-x u` (`C-/`)| OK | Undo |
-| `C-x z` | OK | Redo |
 | `M-x tabify` | - | - |
 | `M-x untabify` | - | - |
 | `M-x comment-region` | - | Comment out |
 | `C-u M-x comment-region` | - | Comment in |
 | `C-;` | OK | Toggle line comment in and out |
-| `M-;` | OK | Toggle region comment in and out |
-| `C-m-\` (`C-:`) | - | Auto indent |
+| `M-;` | △ | Toggle region comment in and out |
 
 ### Other Command
 |Command | Status | Desc |
 |--------|--------|------|
-| `C-g` | △ | Cancel |
-| `C-space` | △ | Set mark |
+| `C-g` | OK | Cancel |
+| `C-space` | OK | Set mark |
 | `C-\` | - | IME control |
-| `C-quote` | - | IntelliSense Suggestion |
-| `C-doublequote` | - | IntelliSense Parameter Hint |
+| `C-quote` | OK | IntelliSense Suggestion |
+| `C-doublequote` | △ | IntelliSense Parameter Hint |
 | `M-x shell` | - | Start up to the shell |
 | `M-/(dabbrev)` | - | - |
 | `M-num command` | - | - |
@@ -112,6 +110,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-b` | - | Create new file and open |
 
 ## Conflicts with default key bindings
+- `ctrl+g`: workbench.action.gotoLine => **Use `alt+g g` instead**;
 - `ctrl+b`: workbench.action.toggleSidebarVisibility;
 - `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
 - `ctrl+x`: editor.action.clipboardCutAction => **Use `shift+DEL` instead**;
@@ -119,5 +118,5 @@ Use `Shift+Insert` to paste from clipboard.
 - `ctrl+k`: editor.debug.action.showDebugHover, editor.action.trimTrailingWhitespace, editor.action.showHover, editor.action.removeCommentLine, editor.action.addCommentLine, editor.action.openDeclarationToTheSide;
 - `ctrl+y`: redo;
 - `ctrl+m`: editor.action.toggleTabFocusMode;
-- `ctrl+/`: editor.action.commentLine;
+- `ctrl+/`: editor.action.commentLine => **Use `ctrl+;` instead**;
 - `ctrl+p`: workbench.action.quickOpenNavigateNext.

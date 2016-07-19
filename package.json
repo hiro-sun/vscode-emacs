@@ -16,6 +16,9 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "ëmacs", "shortcuts", "keybindings", "behavior", "killring"
+    ],
     "activationEvents": [
         "*"
     ],
@@ -23,69 +26,108 @@
     "contributes": {
         "keybindings": [
             {
+                "key": "right",
+                "command": "emacs.cursorRight",
+                "when": "editorTextFocus"
+            },
+            {
                 "key": "ctrl+f",
-                "command": "emacs.C-f",
+                "command": "emacs.cursorRight",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "left",
+                "command": "emacs.cursorLeft",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+b",
-                "command": "emacs.C-b",
+                "command": "emacs.cursorLeft",
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+n",
-                "command": "emacs.C-n",
-                "when": "editorTextFocus"
+                "key": "up",
+                "command": "emacs.cursorUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "ctrl+p",
-                "command": "emacs.C-p",
+                "command": "emacs.cursorUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "down",
+                "command": "emacs.cursorDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "emacs.cursorDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "home",
+                "command": "emacs.cursorHome",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+a",
-                "command": "emacs.C-a",
+                "command": "emacs.cursorHome",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "end",
+                "command": "emacs.cursorEnd",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+e",
-                "command": "emacs.C-e",
+                "command": "emacs.cursorEnd",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+f",
-                "command": "emacs.M-f",
+                "command": "emacs.cursorWordRight",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+b",
-                "command": "emacs.M-b",
+                "command": "emacs.cursorWordLeft",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "pagedown",
+                "command": "emacs.cursorPageDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "ctrl+v",
-                "command": "emacs.C-v",
-                "when": "editorTextFocus"
+                "command": "emacs.cursorPageDown",
+                "when": "editorTextFocus && !suggestWidgetVisible"
+            },
+            {
+                "key": "pageup",
+                "command": "emacs.cursorPageUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "alt+v",
-                "command": "emacs.M-v",
-                "when": "editorTextFocus"
+                "command": "emacs.cursorPageUp",
+                "when": "editorTextFocus && !suggestWidgetVisible"
             },
             {
                 "key": "alt+shift+.",
-                "command": "emacs.M->",
+                "command": "emacs.cursorBottom",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+shift+,",
-                "command": "emacs.M-<",
+                "command": "emacs.cursorTop",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+g g",
-                "command": "emacs.M-g_g",
-                "when": "editorTextFocus"
+                "command": "workbench.action.gotoLine"
             },
             {
                 "key": "ctrl+s",
@@ -109,17 +151,17 @@
             },
             {
                 "key": "ctrl+d",
-                "command": "emacs.C-d",
+                "command": "deleteRight",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+h",
-                "command": "emacs.C-h",
+                "command": "deleteLeft",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+d",
-                "command": "emacs.M-d",
+                "command": "deleteWordRight",
                 "when": "editorTextFocus"
             },
             {
@@ -144,17 +186,12 @@
             },
             {
                 "key": "ctrl+j",
-                "command": "emacs.C-j",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+m",
-                "command": "emacs.C-m",
+                "command": "editor.action.insertLineAfter",
                 "when": "editorTextFocus"
             },
             {
                 "key": "ctrl+x h",
-                "command": "emacs.C-x_h",
+                "command": "editor.action.selectAll",
                 "when": "editorTextFocus"
             },
             {
@@ -168,18 +205,13 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "ctrl+x z",
-                "command": "emacs.C-x_z",
-                "when": "editorTextFocus"
-            },
-            {
                 "key": "ctrl+;",
-                "command": "emacs.C-semicolon",
+                "command": "editor.action.commentLine",
                 "when": "editorTextFocus"
             },
             {
                 "key": "alt+;",
-                "command": "emacs.M-semicolon",
+                "command": "editor.action.blockComment",
                 "when": "editorTextFocus"
             },
             {
@@ -194,7 +226,7 @@
             },
             {
                 "key": "ctrl+g",
-                "command": "cancelSelection",
+                "command": "emacs.exitMarkMode",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
@@ -204,7 +236,7 @@
             },
             {
                 "key": "ctrl+space",
-                "command": "emacs.C-space",
+                "command": "emacs.enterMarkMode",
                 "when": "editorTextFocus"
             },
             {
@@ -260,11 +292,11 @@
                 "when": "inQuickOpen"
             },
             {   "key": "ctrl+'",
-                "command": "emacs.C-quote",
+                "command": "editor.action.triggerSuggest",
                 "when": "editorTextFocus"
             },
             {   "key": "ctrl+shift+'",
-                "command": "emacs.C-doublequote",
+                "command": "editor.action.triggerParameterHints",
                 "when": "editorTextFocus"
             }
         ]
@@ -277,8 +309,5 @@
         "tsd": "^0.6.5",
         "typescript": "^1.6.2",
         "vscode": "0.10.x"
-    },
-    "dependencies": {
-        "lodash": "^4.1.0"
     }
 }
