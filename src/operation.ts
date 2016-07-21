@@ -40,7 +40,6 @@ export class Operation {
                 this.editor.setStatusBarMessage("Undo!");
             },
             'C-g': () => {
-                // this.editor.setNormalMode();
                 this.editor.setStatusBarMessage("Quit");
             }
         };
