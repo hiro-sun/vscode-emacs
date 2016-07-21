@@ -150,6 +150,11 @@
                 "when": "findWidgetVisible"
             },
             {
+                "key": "ctrl+alt+n",
+                "command": "editor.action.addSelectionToNextFindMatch",
+                "when": "editorFocus"
+            },
+            {
                 "key": "ctrl+d",
                 "command": "deleteRight",
                 "when": "editorTextFocus"
@@ -298,6 +303,10 @@
             {   "key": "ctrl+shift+'",
                 "command": "editor.action.triggerParameterHints",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+escape",
+                "command": "workbench.action.toggleSidebarVisibility"
             }
         ]
     },

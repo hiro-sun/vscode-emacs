@@ -52,8 +52,8 @@ function initMarkMode(context: vscode.ExtensionContext): void {
 
     context.subscriptions.push(vscode.commands.registerCommand(
         'emacs.exitMarkMode', () => {
+            vscode.commands.executeCommand("cancelSelection");
             if (inMarkMode) {
-                vscode.commands.executeCommand("cancelSelection");
                 inMarkMode = false;
                 vscode.window.setStatusBarMessage("Mark deactivated", 1000);
             }
