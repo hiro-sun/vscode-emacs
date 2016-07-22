@@ -46,8 +46,8 @@ Use `Shift+Insert` to paste from clipboard.
 | `M-<` | OK | Move to the beginning of buffer |
 | `C-v` | OK | Scroll down by one screen unit |
 | `M-v` | OK | Scroll up by one screen unit |
-| `C-x C-n` | - | - |
-| `C-u C-x C-n` | - |deactivate C-x C-n |
+| `C-x C-n` | - | Set goal column |
+| `C-u C-x C-n` | - | Deactivate C-x C-n |
 | `M-g g` | OK | Jump to line (command palette) |
 
 
@@ -57,14 +57,14 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-s` | OK | Search forward |
 | `C-r` | OK | Search backward |
 | `C-M-n` | OK | Add selection to next find match |
-| `C-l` | - | - |
+| `C-l` | - | Use `>ext install keyboard-scroll` to activate |
 
 ### Edit command
 |Command | Status | Desc |
 |--------|--------|------|
-| `C-d` | OK | Delete right from point (DEL)|
-| `C-h` | OK | Delete left from point (BS) |
-| `M-d` | OK | Delete word at current position |
+| `C-d` | OK | Delete right (DEL) |
+| `C-h` | OK | Delete left (BACKSPACE) |
+| `M-d` | OK | Delete word |
 | `C-k` | OK | Kill to line end |
 | `C-w` | OK | Kill region |
 | `M-w` | OK | Copy region to kill ring |
@@ -72,7 +72,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-j` | OK | Line Feed |
 | `C-m` | - | Carriage Return |
 | `C-i` | - | Horizontal Tab |
-| `C-x C-o` | - | - |
+| `C-x C-o` | - | Delete blank lines around |
 | `C-x h` | OK | Select All |
 | `C-x u` (`C-/`)| OK | Undo |
 | `C-;` | OK | Toggle line comment in and out |
@@ -87,8 +87,8 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-quote` | OK | IntelliSense Suggestion |
 | `C-doublequote` | △ | IntelliSense Parameter Hint |
 | `M-x` | OK | Open command palette |
-| `M-/(dabbrev)` | - | - |
-| `M-num command` | - | - |
+| `M-/(dabbrev)` | - | Auto-completion |
+| `M-num command` | - | Repeat command `num` times |
 | `C-ESC` | OK | Toggle SideBar visibility |
 
 ### File Command
