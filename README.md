@@ -46,8 +46,6 @@ Use `Shift+Insert` to paste from clipboard.
 | `M-<` | OK | Move to the beginning of buffer |
 | `C-v` | OK | Scroll down by one screen unit |
 | `M-v` | OK | Scroll up by one screen unit |
-| `M-x goto-line` | - | Jump to line |
-| `M-x goto-char` | - | - |
 | `C-x C-n` | - | - |
 | `C-u C-x C-n` | - |deactivate C-x C-n |
 | `M-g g` | OK | Jump to line (command palette) |
@@ -60,8 +58,6 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-r` | OK | Search backward |
 | `C-M-n` | OK | Add selection to next find match |
 | `C-l` | - | - |
-| `M-x (regex)` | - | - |
-| `M-% (string)` | - | - |
 
 ### Edit command
 |Command | Status | Desc |
@@ -79,10 +75,6 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-x C-o` | - | - |
 | `C-x h` | OK | Select All |
 | `C-x u` (`C-/`)| OK | Undo |
-| `M-x tabify` | - | - |
-| `M-x untabify` | - | - |
-| `M-x comment-region` | - | Comment out |
-| `C-u M-x comment-region` | - | Comment in |
 | `C-;` | OK | Toggle line comment in and out |
 | `M-;` | △ | Toggle region comment in and out |
 
@@ -94,7 +86,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-\` | - | IME control |
 | `C-quote` | OK | IntelliSense Suggestion |
 | `C-doublequote` | △ | IntelliSense Parameter Hint |
-| `M-x shell` | - | Start up to the shell |
+| `M-x` | OK | Open command palette |
 | `M-/(dabbrev)` | - | - |
 | `M-num command` | - | - |
 | `C-ESC` | OK | Toggle SideBar visibility |
