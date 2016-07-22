@@ -17,7 +17,7 @@
         "Other"
     ],
     "keywords": [
-        "ëmacs", "shortcuts", "keybindings", "behavior", "killring"
+        "emacs", "shortcuts", "keybindings", "behavior", "killring"
     ],
     "activationEvents": [
         "*"
