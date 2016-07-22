@@ -267,6 +267,9 @@
                 "command": "editor.action.triggerParameterHints",
                 "when": "editorTextFocus"
             },{
+                "key": "alt+x",
+                "command": "workbench.action.showCommands"
+            },{
                 "key": "ctrl+escape",
                 "command": "workbench.action.toggleSidebarVisibility"
             }
