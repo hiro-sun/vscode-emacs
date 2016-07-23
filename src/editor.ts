@@ -44,15 +44,11 @@ export class Editor {
             ];
 
         Promise.all(promises).then(() => {
-            let selection: vscode.Selection,
-                range: vscode.Range;
+            let selection = this.getSelection(),
+                range = new vscode.Range(selection.start, selection.end);
 
-            selection = this.getSelection();
-            range = new vscode.Range(selection.start, selection.end);
             this.setSelection(range.start, range.start);
-
             this.isKillRepeated = saveIsKillRepeated;
-
             if (range.isEmpty) {
                 this.killEndOfLine(saveIsKillRepeated, range);
             } else {
@@ -61,7 +57,7 @@ export class Editor {
         });
     }
 
-    private killEndOfLine(saveIsKillRepeated: boolean, range: vscode.Range) {
+    private killEndOfLine(saveIsKillRepeated: boolean, range: vscode.Range): void {
         let doc = vscode.window.activeTextEditor.document,
             eof = doc.lineAt(doc.lineCount - 1).range.end;
 
@@ -77,7 +73,7 @@ export class Editor {
         });
     }
 
-    private killText(range: vscode.Range) {
+    private killText(range: vscode.Range): void {
         let text = vscode.window.activeTextEditor.document.getText(range),
             promises = [
                 Editor.delete(range),
