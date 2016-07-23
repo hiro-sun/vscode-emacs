@@ -7,7 +7,7 @@ This is emacs like plugin for Visual Studio Code.
 0.0.9 (2016-07-24)
 - Add Kill-ring
 - Alt-x show commands palette.
-All changes written by sammy44nts. Thanks
+All changes written by gizak, sammy44nts. Thanks
 
 0.0.7 (2016-07-14)
 - bug fix for C-k. Thanks trezm.
