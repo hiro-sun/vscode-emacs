@@ -4,6 +4,11 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
+0.0.8 (2016-07-24)
+- Add Kill-ring
+- Alt-x show commands palette.
+All changes written by sammy44nts. Thanks
+
 0.0.7 (2016-07-14)
 - bug fix for C-k. Thanks trezm.
 - C-o and C-x C-f execute "workbench.action.files.openFile". Thanks sammy44nts.
