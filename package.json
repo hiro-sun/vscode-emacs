@@ -176,17 +176,11 @@
             },
             {
                 "key": "alt+x",
-                "command": "emacs.M-x",
-                "when": "editorTextFocus"
+                "command": "workbench.action.showCommands"
             },
             {
                 "key": "ctrl+x",
                 "command": "emacs.C-x",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "alt+x",
-                "command": "emacs.M-x",
                 "when": "editorTextFocus"
             },
             {
