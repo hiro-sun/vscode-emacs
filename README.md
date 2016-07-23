@@ -4,7 +4,7 @@ This is emacs like plugin for Visual Studio Code.
 
 ## Update History
 
-0.0.8 (2016-07-24)
+0.0.9 (2016-07-24)
 - Add Kill-ring
 - Alt-x show commands palette.
 All changes written by sammy44nts. Thanks
