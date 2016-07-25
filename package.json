@@ -270,7 +270,7 @@
                 "key": "alt+x",
                 "command": "workbench.action.showCommands"
             },{
-                "key": "ctrl+escape",
+                "key": "ctrl+alt+space",
                 "command": "workbench.action.toggleSidebarVisibility"
             }
         ]
