@@ -62,7 +62,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-s` | OK | Search forward |
 | `C-r` | OK | Search backward |
 | `C-M-n` | OK | Add selection to next find match |
-| `C-l` | - | Use `>ext install keyboard-scroll` to activate |
+| `C-l` | - | Use `ext install keyboard-scroll` to activate |
 
 ### Edit command
 |Command | Status | Desc |
