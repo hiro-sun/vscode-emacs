@@ -94,7 +94,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `M-x` | OK | Open command palette |
 | `M-/(dabbrev)` | - | Auto-completion |
 | `M-num command` | - | Repeat command `num` times |
-| `C-ESC` | OK | Toggle SideBar visibility |
+| `C-M-SPC` | OK | Toggle SideBar visibility |
 
 ### File Command
 |Command | Status | Desc |
@@ -111,7 +111,7 @@ Use `Shift+Insert` to paste from clipboard.
 ## Conflicts with default key bindings
 - `ctrl+d`: editor.action.addSelectionToNextFindMatch => **Use `ctrl+alt+n` instead**;
 - `ctrl+g`: workbench.action.gotoLine => **Use `alt+g g` instead**;
-- `ctrl+b`: workbench.action.toggleSidebarVisibility => **Use `ctrl+escape` instead**;
+- `ctrl+b`: workbench.action.toggleSidebarVisibility => **Use `ctrl+alt+space` instead**;
 - `ctrl+space`: toggleSuggestionDetails, editor.action.triggerSuggest;
 - `ctrl+x`: editor.action.clipboardCutAction => **Use `shift+delete` instead**;
 - `ctrl+v`: editor.action.clipboardPasteAction => **Use `shift+insert` instead**;
