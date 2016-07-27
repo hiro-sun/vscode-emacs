@@ -77,7 +77,7 @@ Use `Shift+Insert` to paste from clipboard.
 | `C-j` | OK | Line Feed |
 | `C-m` | - | Carriage Return |
 | `C-i` | - | Horizontal Tab |
-| `C-x C-o` | - | Delete blank lines around |
+| `C-x C-o` | OK | Delete blank lines around |
 | `C-x h` | OK | Select All |
 | `C-x u` (`C-/`)| OK | Undo |
 | `C-;` | OK | Toggle line comment in and out |

@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext): void {
             "C-g",
 
             // Edit
-            "C-k", "C-w", "M-w", "C-y",
+            "C-k", "C-w", "M-w", "C-y", "C-x_C-o",
             "C-x_u", "C-/"
         ],
         cursorMoves: string[] = [
