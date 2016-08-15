@@ -114,7 +114,6 @@ export class Editor {
         if (this.killRing.length === 0) {
             return false;
         }
-        vscode.commands.executeCommand("emacs.enterMarkMode");
         vscode.window.activeTextEditor.edit(editBuilder => {
             editBuilder.insert(this.getSelection().active, this.killRing);
         });
