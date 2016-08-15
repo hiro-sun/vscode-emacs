@@ -31,6 +31,9 @@ export class Operation {
                     this.editor.setStatusBarMessage("Kill ring is empty");
                 }
             },
+            "C-x_C-o": () => {
+                this.editor.deleteBlankLines();
+            },
             "C-x_u": () => {
                 this.editor.undo();
                 this.editor.setStatusBarMessage("Undo!");

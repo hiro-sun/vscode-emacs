@@ -126,6 +126,50 @@ export class Editor {
         vscode.commands.executeCommand("undo");
     }
 
+    private getFirstBlankLine(range: vscode.Range): vscode.Range {
+        let doc = vscode.window.activeTextEditor.document;
+
+        if (range.start.line === 0) {
+            return range;
+        }
+        range = doc.lineAt(range.start.line - 1).range;
+        while (range.start.line > 0 && range.isEmpty) {
+            range = doc.lineAt(range.start.line - 1).range;
+        }
+        if (range.isEmpty) {
+            return range;
+        } else {
+            return doc.lineAt(range.start.line + 1).range;
+        }
+    }
+
+    deleteBlankLines(): void {
+        let selection = this.getSelection(),
+            anchor = selection.anchor,
+            doc = vscode.window.activeTextEditor.document,
+            range = doc.lineAt(selection.start.line).range,
+            promises = [],
+            nextLine: vscode.Position;
+
+        if (range.isEmpty) {
+            range = this.getFirstBlankLine(range);
+            anchor = range.start;
+            nextLine = range.start;
+        } else {
+            nextLine = range.start.translate(1, 0);
+        }
+        selection = new vscode.Selection(nextLine, nextLine);
+        vscode.window.activeTextEditor.selection = selection;
+        for (let line = selection.start.line;
+             line < doc.lineCount - 1  && doc.lineAt(line).range.isEmpty;
+             ++line) {
+            promises.push(vscode.commands.executeCommand("deleteRight"));
+        }
+        Promise.all(promises).then(() => {
+            vscode.window.activeTextEditor.selection = new vscode.Selection(anchor, anchor);
+        });
+    }
+
     static delete(range: vscode.Range = null): Thenable<boolean> {
         if (range === null) {
             let start = new vscode.Position(0, 0),
