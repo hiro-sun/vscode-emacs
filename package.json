@@ -2,7 +2,7 @@
     "name": "vscode-emacs",
     "displayName": "vscode-emacs",
     "description": "emacs like extension for vscode",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "publisher": "hiro-sun",
     "homepage": "https://github.com/hiro-sun/vscode-emacs",
     "repository": {
