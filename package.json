@@ -276,6 +276,10 @@
             },{
                 "key": "ctrl+alt+space",
                 "command": "workbench.action.toggleSidebarVisibility"
+            },{
+                "key": "ctrl+x r",
+                "command": "emacs.C-x_r",
+                "when": "editorTextFocus"
             }
         ]
     },

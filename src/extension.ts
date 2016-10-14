@@ -9,7 +9,10 @@ export function activate(context: vscode.ExtensionContext): void {
 
             // Edit
             "C-k", "C-w", "M-w", "C-y", "C-x_C-o",
-            "C-x_u", "C-/"
+            "C-x_u", "C-/",
+
+            // R-Mode
+            "C-x_r"
         ],
         cursorMoves: string[] = [
             "cursorUp", "cursorDown", "cursorLeft", "cursorRight",
@@ -34,6 +37,14 @@ export function activate(context: vscode.ExtensionContext): void {
             })
         )
     });
+
+    // 'type' is not an "emacs." command and should be registered separately
+    context.subscriptions.push(vscode.commands.registerCommand("type", function (args) {
+		if (!vscode.window.activeTextEditor) {
+			return;
+		}
+		op.onType(args.text);        
+    }));
 
     initMarkMode(context);
 }

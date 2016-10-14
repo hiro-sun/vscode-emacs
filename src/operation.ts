@@ -44,11 +44,18 @@ export class Operation {
             },
             'C-g': () => {
                 this.editor.setStatusBarMessage("Quit");
-            }
+            },
+            "C-x_r": () => {
+                this.editor.setRMode();
+            },
         };
     }
 
     getCommand(commandName: string): (...args: any[]) => any {
         return this.commandList[commandName];
+    }
+
+    onType(text: string): void {
+        this.editor.onType(text);
     }
 }
