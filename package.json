@@ -1,8 +1,8 @@
 {
   "name": "vscode-emacs",
-  "displayName": "vscode-emacs",
+  "displayName": "Emacs Keymap",
   "description": "emacs like extension for vscode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "hiro-sun",
   "homepage": "https://github.com/hiro-sun/vscode-emacs",
   "repository": {
@@ -265,7 +265,67 @@
       {
         "key": "ctrl+g",
         "command": "closeReferenceSearchEditor",
-        "when": "searchViewletVisible"
+        "when": "inReferenceSearchEditor && !config.editor.stablePeek"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeReferenceSearch",
+        "when": "referenceSearchVisible && !config.editor.stablePeek"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "removeSecondaryCursors",
+        "when": "editorHasMultipleSelections && editorTextFocus"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeBreakpointWidget",
+        "when": "breakpointWidgetVisible && editorFocus"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "leaveSnippet",
+        "when": "editorTextFocus && inSnippetMode"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeMarkersNavigation",
+        "when": "editorFocus && markersNavigationVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeParameterHints",
+        "when": "editorTextFocus && parameterHintsVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "hideSuggestWidget",
+        "when": "editorTextFocus && suggestWidgetVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "cancelRenameInput",
+        "when": "editorFocus && renameInputVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeAccessibilityHelp",
+        "when": "accessibilityHelpWidgetVisible && editorFocus"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "closeReplaceInFilesWidget",
+        "when": "replaceInputBoxFocus && searchViewletVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "workbench.action.closeMessages",
+        "when": "globalMessageVisible"
+      },
+      {
+        "key": "ctrl+g",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
       },
       {
         "key": "ctrl+space",
