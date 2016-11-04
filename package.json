@@ -11,7 +11,7 @@
   },
   "bugs": "https://github.com/hiro-sun/vscode-emacs/issues",
   "engines": {
-    "vscode": "^1.0.3"
+    "vscode": "^1.5.0"
   },
   "categories": [
     "Other",
@@ -356,12 +356,15 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
+    "mocha": "^3.1.2",
     "typescript": "^2.0.7",
-    "typings": "^1.5.0",
-    "vscode": "^1.0.3"
+    "vscode": "^1.0.3",
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40"
   }
 }
