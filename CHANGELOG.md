@@ -1,3 +1,7 @@
+## 0.1.1 (2016-11-04)
+- Fix #24: C-g does not cancel suggestions and prompts
+- Update vscode engine
+
 ## 0.1.0
 - Fix: IntelliSense Suggestion.
 - Add C-x b.
